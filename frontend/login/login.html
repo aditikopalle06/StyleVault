@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleVault - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <div class="background-gradient"></div>
+
+        <div class="decorative-icon decorative-icon--hanger">
+            <span class="material-symbols-outlined">styler</span>
+        </div>
+
+        <div class="decorative-icon decorative-icon--sparkle">
+            <span class="material-symbols-outlined">auto_awesome</span>
+        </div>
+
+        <section class="login-container">
+
+            <div class="login-card">
+
+                <div class="card-accent"></div>
+
+                <div class="login-content">
+
+                    <div class="card-sparkle">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                    </div>
+
+                    <header class="brand">
+                        <h1>StyleVault</h1>
+                        <p>Curate your digital wardrobe.</p>
+                    </header>
+
+                    <form class="login-form" id="loginForm">
+
+                        <h2>Welcome back</h2>
+
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="hello@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="password">Password</label>
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                            >
+                        </div>
+
+                        <div class="forgot-password">
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="button button--primary"
+                            >
+                                Log In
+                            </button>
+
+                            <button
+                                type="button"
+                                class="button button--secondary"
+                                id="createAccountButton"
+                            >
+                                Create Account
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="editorial-label">
+                <span></span>
+                <p>Cozy Editorialism</p>
+                <span></span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="login.js"></script>
+
+</body>
+</html>

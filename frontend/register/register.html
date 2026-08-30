@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StyleVault - Register</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <div class="background-gradient"></div>
+
+        <div class="decorative-icon decorative-icon--hanger">
+            <span class="material-symbols-outlined">styler</span>
+        </div>
+
+        <div class="decorative-icon decorative-icon--sparkle">
+            <span class="material-symbols-outlined">auto_awesome</span>
+        </div>
+
+
+        <section class="register-container">
+
+            <div class="register-card">
+
+                <div class="card-accent"></div>
+
+                <div class="register-content">
+
+                    <div class="card-sparkle">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                    </div>
+
+
+                    <header class="brand">
+
+                        <h1>StyleVault</h1>
+
+                        <p>Curate your digital wardrobe.</p>
+
+                    </header>
+
+
+                    <form class="register-form" id="registerForm">
+
+                        <h2>Create Account</h2>
+
+
+                        <div class="form-field">
+
+                            <label for="fullname">
+                                Full Name
+                            </label>
+
+                            <input
+                                id="fullname"
+                                name="fullname"
+                                type="text"
+                                placeholder="Jane Doe"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <input
+                                id="username"
+                                name="username"
+                                type="text"
+                                placeholder="@janedoe"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="jane@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="confirm-password">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                id="confirm-password"
+                                name="confirmPassword"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="button button--primary"
+                            >
+                                Create Account
+                            </button>
+
+                        </div>
+
+
+                        <div class="signin-link">
+
+                            <span>Already have an account? </span>
+
+                            <a href="../login/login.html">
+                                Sign In
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <div class="editorial-label">
+
+                <span></span>
+
+                <p>Cozy Editorialism</p>
+
+                <span></span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="register.js"></script>
+
+</body>
+</html>

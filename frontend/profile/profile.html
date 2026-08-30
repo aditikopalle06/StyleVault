@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StyleVault - Profile</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="profile.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo-section">
+
+            <span class="logo-text">
+                StyleVault
+            </span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="../dashboard/dashboard.html" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    checkroom
+                </span>
+
+                Wardrobe
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    styler
+                </span>
+
+                Outfits
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
+                Calendar
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+
+                Wear History
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    insights
+                </span>
+
+                Analytics
+
+            </a>
+
+
+            <a href="#" class="nav-link ai-link">
+
+                <span class="material-symbols-outlined">
+                    auto_awesome
+                </span>
+
+                AI Assistant
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../preferences/preferences.html" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+
+                Preferences
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN AREA -->
+
+    <div class="main-area">
+
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div></div>
+
+
+            <div class="profile-area">
+
+                <button class="top-icon">
+
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+
+                </button>
+
+
+                <button class="top-icon">
+
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                </button>
+
+
+                <div class="profile-divider"></div>
+
+
+                <div class="profile-details">
+
+                    <p id="topProfileName">
+                        User
+                    </p>
+
+                    <span>
+                        StyleVault
+                    </span>
+
+                </div>
+
+
+                <div class="profile-circle">
+
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- PROFILE CONTENT -->
+
+        <main class="profile-page">
+
+
+            <div class="profile-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <section class="page-header">
+
+                    <p class="section-label">
+                        ACCOUNT
+                    </p>
+
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+
+                    <p>
+                        Manage your StyleVault account information.
+                    </p>
+
+                </section>
+
+
+
+                <!-- PROFILE SUMMARY -->
+
+                <section class="profile-summary">
+
+                    <div class="profile-avatar">
+
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-summary-text">
+
+                        <h2 id="profileName">
+                            User
+                        </h2>
+
+                        <p id="profileUsername">
+                            @username
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ACCOUNT INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            Account Information
+                        </h2>
+
+                        <p>
+                            Your basic account details.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-field">
+
+                            <label for="name">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Your username"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field full-width">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ACCOUNT SECURITY -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            Account Security
+                        </h2>
+
+                        <p>
+                            Manage your account security.
+                        </p>
+
+                    </div>
+
+
+                    <div class="security-row">
+
+                        <div>
+
+                            <h3>
+                                Password
+                            </h3>
+
+                            <p>
+                                Your password is securely stored.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="changePasswordButton"
+                        >
+                            Change Password
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ACTIONS -->
+
+                <div class="profile-actions">
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        id="saveProfileButton"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+                        Log Out
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="profile-message"
+                    id="profileMessage"
+                ></p>
+
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

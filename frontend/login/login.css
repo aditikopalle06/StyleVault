@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+
+:root {
+    --primary: #586152;
+    --surface: #fff8f3;
+    --card: #ffffff;
+    --text: #1d1b19;
+    --muted: #454841;
+    --border: #c5c7bf;
+    --accent: #825156;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: "Hanken Grotesk", sans-serif;
+    color: var(--text);
+    background: #f3ede8;
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+.material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.login-page {
+    position: relative;
+    min-height: 100vh;
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.background-gradient {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        #fff8f3,
+        #f3ede8
+    );
+
+    opacity: 0.5;
+}
+
+
+.decorative-icon {
+    position: absolute;
+    z-index: 0;
+
+    color: rgba(29, 27, 25, 0.10);
+
+    user-select: none;
+}
+
+
+.decorative-icon--hanger {
+    top: 40px;
+    left: 40px;
+
+    transform: rotate(-12deg) scale(1.5);
+}
+
+
+.decorative-icon--sparkle {
+    right: 40px;
+    bottom: 40px;
+
+    transform: rotate(45deg) scale(1.5);
+}
+
+
+.decorative-icon .material-symbols-outlined {
+    font-size: 96px;
+}
+
+
+.login-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 448px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login-card {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 35px rgba(29, 27, 25, 0.12);
+}
+
+
+.card-accent {
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+}
+
+
+.login-content {
+    position: relative;
+
+    padding: 40px;
+}
+
+
+.card-sparkle {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    color: #625b6e;
+}
+
+
+.brand {
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+
+.brand h1 {
+    margin: 0 0 4px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+    line-height: 1.15;
+}
+
+
+.brand p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+
+.login-form h2 {
+    margin: 0 0 24px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.form-field {
+    position: relative;
+
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+
+.form-field label {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.form-field input {
+    width: 100%;
+
+    padding: 8px 0;
+
+    border: 0;
+    border-bottom: 1px solid var(--border);
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+}
+
+
+.form-field input:focus {
+    border-bottom-color: var(--primary);
+}
+
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 4px;
+}
+
+
+.forgot-password a {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+
+.forgot-password a:hover {
+    color: var(--primary);
+
+    text-decoration: underline;
+}
+
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 32px;
+}
+
+
+.button {
+    width: 100%;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+
+.button--primary {
+    border: 1px solid var(--primary);
+
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 4px 8px rgba(29, 27, 25, 0.12);
+}
+
+
+.button--primary:hover {
+    background: #4d5648;
+}
+
+
+.button--secondary {
+    border: 1px solid var(--primary);
+
+    background: transparent;
+
+    color: var(--primary);
+}
+
+
+.button--secondary:hover {
+    background: #a8b19f;
+
+    color: #3c4436;
+}
+
+
+.editorial-label {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 32px;
+
+    opacity: 0.6;
+}
+
+
+.editorial-label span {
+    width: 32px;
+    height: 1px;
+
+    background: var(--text);
+}
+
+
+.editorial-label p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 16px;
+    }
+
+    .login-content {
+        padding: 28px 24px;
+    }
+
+    .brand h1 {
+        font-size: 38px;
+    }
+
+    .decorative-icon {
+        display: none;
+    }
+
+}

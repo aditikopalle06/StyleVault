@@ -1,0 +1,444 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: "Hanken Grotesk", sans-serif;
+    color: #1d1b19;
+    background: #f3ede8;
+}
+
+
+/* Main page */
+
+.register-page {
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Background */
+
+.background-gradient {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        #fff8f3,
+        #f3ede8
+    );
+
+    opacity: 0.5;
+
+    z-index: 0;
+}
+
+
+/* Decorative icons */
+
+.decorative-icon {
+    position: absolute;
+
+    color: rgba(29, 27, 25, 0.10);
+
+    z-index: 0;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+
+.decorative-icon--hanger {
+    top: 40px;
+    left: 40px;
+
+    transform: rotate(-12deg) scale(1.5);
+}
+
+
+.decorative-icon--sparkle {
+    right: 40px;
+    bottom: 40px;
+
+    transform: rotate(45deg) scale(1.5);
+}
+
+
+.decorative-icon .material-symbols-outlined {
+    font-size: 96px;
+    line-height: 1;
+}
+
+
+/* Main container */
+
+.register-container {
+    width: 100%;
+    max-width: 480px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Card */
+
+.register-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #c5c7bf;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 12px 30px rgba(29, 27, 25, 0.12);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* Top accent */
+
+.card-accent {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        to right,
+        #586152,
+        #825156
+    );
+}
+
+
+/* Card content */
+
+.register-content {
+    padding: 42px;
+    position: relative;
+}
+
+
+/* Card sparkle */
+
+.card-sparkle {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    color: #625b6e;
+}
+
+
+.card-sparkle .material-symbols-outlined {
+    font-size: 20px;
+}
+
+
+/* Brand */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 38px;
+}
+
+
+.brand h1 {
+    margin: 0 0 4px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+    line-height: 1.15;
+
+    font-weight: 600;
+}
+
+
+.brand p {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #454841;
+}
+
+
+/* Form */
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.register-form h2 {
+    margin: 0 0 8px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+    line-height: 32px;
+
+    font-weight: 500;
+}
+
+
+/* Form fields */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    padding-top: 16px;
+}
+
+
+.form-field + .form-field {
+    margin-top: 8px;
+}
+
+
+/* Labels */
+
+.form-field label {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 0.08em;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    color: #454841;
+}
+
+
+/* Inputs */
+
+.form-field input {
+    width: 100%;
+
+    padding: 8px 0;
+
+    border: none;
+
+    border-bottom: 1px solid #c5c7bf;
+
+    background: transparent;
+
+    outline: none;
+
+    font-family: "Hanken Grotesk", sans-serif;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #1d1b19;
+
+    transition: border-color 0.3s ease;
+}
+
+
+.form-field input::placeholder {
+    color: #b4aeb0;
+}
+
+
+.form-field input:focus {
+    border-bottom-color: #586152;
+}
+
+
+/* Buttons */
+
+.form-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 8px;
+}
+
+
+.button {
+    width: 100%;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    font-family: "Hanken Grotesk", sans-serif;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+.button--primary {
+    border: none;
+
+    background: #586152;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 10px rgba(29, 27, 25, 0.12);
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+.button--primary:hover {
+    background: #4c5547;
+}
+
+
+.button--primary:active {
+    transform: translateY(1px);
+}
+
+
+/* Sign in */
+
+.signin-link {
+    text-align: center;
+
+    margin-top: 4px;
+
+    font-size: 13px;
+    line-height: 18px;
+
+    color: #454841;
+}
+
+
+.signin-link a {
+    color: #454841;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.signin-link a:hover {
+    color: #586152;
+
+    text-decoration: underline;
+}
+
+
+/* Editorial label */
+
+.editorial-label {
+    margin-top: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    opacity: 0.6;
+
+    font-size: 13px;
+    line-height: 18px;
+}
+
+
+.editorial-label span {
+    width: 32px;
+    height: 1px;
+
+    background: #1d1b19;
+}
+
+
+.editorial-label p {
+    margin: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .register-page {
+        padding: 16px;
+    }
+
+
+    .register-content {
+        padding: 28px;
+    }
+
+
+    .brand h1 {
+        font-size: 40px;
+    }
+
+
+    .decorative-icon {
+        display: none;
+    }
+
+}

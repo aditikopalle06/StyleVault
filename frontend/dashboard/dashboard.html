@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StyleVault - Dashboard</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo-section">
+
+            <span class="logo-text">
+                StyleVault
+            </span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+
+            <a href="dashboard.html" class="nav-link active">
+
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    checkroom
+                </span>
+
+                Wardrobe
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    styler
+                </span>
+
+                Outfits
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
+                Calendar
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+
+                Wear History
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    insights
+                </span>
+
+                Analytics
+
+            </a>
+
+
+            <a href="#" class="nav-link ai-link">
+
+                <span class="material-symbols-outlined">
+                    auto_awesome
+                </span>
+
+                AI Assistant
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../preferences/preferences.html" class="nav-link">
+
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+
+                Preferences
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN AREA -->
+
+    <div class="main-area">
+
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div></div>
+
+
+            <<div class="profile-area" id="dashboardProfile">
+
+
+                <button class="top-icon">
+
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+
+                </button>
+
+
+                <button class="top-icon">
+
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                </button>
+
+
+                <div class="profile-divider"></div>
+
+
+                <div class="profile-details">
+
+                    <p id="displayName">
+                        User
+                    </p>
+
+                    <span>
+                        StyleVault
+                    </span>
+
+                </div>
+
+
+                <div class="profile-circle">
+
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- DASHBOARD -->
+
+        <main class="dashboard">
+
+
+            <div class="dashboard-content">
+
+
+                <!-- WELCOME SECTION -->
+
+                <section class="welcome-section">
+
+                    <p class="section-label">
+                        MY DASHBOARD
+                    </p>
+
+
+                    <h1>
+
+                        Good morning,
+
+                        <span id="userName">
+                            User
+                        </span>
+
+                        <span class="star">
+                            ✦
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Keep track of your wardrobe, outfits
+                        and styling plans all in one place.
+
+                    </p>
+
+                </section>
+
+
+
+                <!-- TOP DASHBOARD GRID -->
+
+                <section class="dashboard-grid">
+
+
+                    <!-- TODAY'S ENSEMBLE -->
+
+                    <div class="card outfit-card">
+
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                <span class="material-symbols-outlined">
+                                    wb_sunny
+                                </span>
+
+                                Today's Ensemble
+
+                            </h2>
+
+
+                            <span class="tag">
+                                Planned Outfit
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="outfit-empty-state">
+
+
+                            <span class="material-symbols-outlined">
+
+                                styler
+
+                            </span>
+
+
+                            <h3>
+                                No outfit planned for today
+                            </h3>
+
+
+                            <p>
+
+                                Plan an outfit to see it
+                                displayed here.
+
+                            </p>
+
+
+                            <button class="primary-button">
+
+                                PLAN AN OUTFIT
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SUMMARY COLUMN -->
+
+                    <div class="summary-column">
+
+
+                        <!-- WARDROBE TOTAL -->
+
+                        <div class="card summary-card">
+
+
+                            <div>
+
+                                <p class="small-title">
+                                    WARDROBE TOTAL
+                                </p>
+
+
+                                <h2>
+
+                                    <span id="wardrobeCount">
+                                        0
+                                    </span>
+
+                                    <span>
+                                        items
+                                    </span>
+
+                                </h2>
+
+                            </div>
+
+
+                            <div class="summary-icon">
+
+                                <span class="material-symbols-outlined">
+                                    checkroom
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- OUTFITS CREATED -->
+
+                        <div class="card summary-card">
+
+
+                            <div>
+
+                                <p class="small-title">
+                                    OUTFITS CREATED
+                                </p>
+
+
+                                <h2>
+
+                                    <span id="outfitCount">
+                                        0
+                                    </span>
+
+                                    <span>
+                                        looks
+                                    </span>
+
+                                </h2>
+
+                            </div>
+
+
+                            <div class="summary-icon outfit-icon">
+
+                                <span class="material-symbols-outlined">
+                                    styler
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- CATEGORY BREAKDOWN -->
+
+                        <div class="card category-card">
+
+
+                            <p class="small-title">
+                                CATEGORY BREAKDOWN
+                            </p>
+
+
+                            <div class="category-empty-state">
+
+
+                                <span class="material-symbols-outlined">
+                                    pie_chart
+                                </span>
+
+
+                                <p>
+                                    No wardrobe data yet.
+                                </p>
+
+
+                                <span>
+                                    Add clothing items to see
+                                    your category breakdown.
+                                </span>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- LOWER SECTION -->
+
+                <section class="lower-grid">
+
+
+                    <!-- RECENTLY ADDED -->
+
+                    <div class="card recent-card">
+
+
+                        <div class="card-header">
+
+
+                            <h2>
+
+                                <span class="material-symbols-outlined">
+                                    add_circle
+                                </span>
+
+                                Recently Added
+
+                            </h2>
+
+
+                            <a href="../my_wardrobe/code.html">
+                                View Wardrobe
+                            </a>
+
+
+                        </div>
+
+
+
+                        <div
+                            class="recent-items"
+                            id="recentItems"
+                        >
+
+
+                            <div class="empty-wardrobe">
+
+
+                                <span class="material-symbols-outlined">
+                                    checkroom
+                                </span>
+
+
+                                <p>
+                                    Your wardrobe is empty.
+                                </p>
+
+
+                                <span>
+                                    Add your first clothing item
+                                    to see it here.
+                                </span>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- RIGHT COLUMN -->
+
+                    <div class="right-column">
+
+
+                        <!-- UPCOMING OUTFIT -->
+
+                        <div class="card upcoming-card">
+
+
+                            <div class="upcoming-empty-state">
+
+
+                                <span class="material-symbols-outlined">
+                                    calendar_month
+                                </span>
+
+
+                                <div>
+
+
+                                    <p class="small-title">
+                                        UPCOMING OUTFIT
+                                    </p>
+
+
+                                    <h3>
+                                        No upcoming outfits
+                                    </h3>
+
+
+                                    <p class="muted-text">
+
+                                        Your planned outfits
+                                        will appear here.
+
+                                    </p>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- WARDROBE INSIGHT -->
+
+                        <div class="card insight-card">
+
+
+                            <div class="insight-icon">
+
+
+                                <span class="material-symbols-outlined">
+                                    insights
+                                </span>
+
+
+                            </div>
+
+
+                            <div>
+
+
+                                <p class="small-title">
+                                    WARDROBE INSIGHT
+                                </p>
+
+
+                                <p class="insight-text">
+
+                                    Start adding and wearing
+                                    clothing items to see
+                                    wardrobe insights.
+
+                                </p>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
