@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Outfit Assistant | StyleVault</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >   
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="ai_assistant.css">
+    <script src="ai_assistant.js" defer></script>
+    <script src="../common.js" defer></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="mobileSidebar">
+
+        <div class="logo-section">
+            <span class="logo-text">StyleVault</span>
+        </div>
+
+        <nav class="navigation">
+
+            <a class="nav-link" href="../dashboard/dashboard.html">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a class="nav-link" href="../wardrobe/wardrobe.html">
+                <span class="material-symbols-outlined">checkroom</span>
+                <span>Wardrobe</span>
+            </a>
+
+            <a class="nav-link" href="../outfits/outfits.html">
+                <span class="material-symbols-outlined">styler</span>
+                <span>Outfits</span>
+            </a>
+
+            <a class="nav-link" href="../calendar/calendar.html">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span>Calendar</span>
+            </a>
+
+            <a class="nav-link" href="../wear_history/wear_history.html">
+                <span class="material-symbols-outlined">history</span>
+                <span>Wear History</span>
+            </a>
+
+            <a class="nav-link" href="../analytics/analytics.html">
+                <span class="material-symbols-outlined">insights</span>
+                <span>Analytics</span>
+            </a>
+
+            <a
+                class="nav-link active"
+                href="ai_assistant.html"
+                aria-current="page"
+            >
+                <span class="material-symbols-outlined">auto_awesome</span>
+                <span>AI Assistant</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a class="nav-link" href="../preferences/preferences.html">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Preferences</span>
+            </a>
+        </div>
+
+    </aside>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+
+    <!-- MAIN PAGE -->
+    <div class="page-shell">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="mobileSidebar"
+                    aria-expanded="false"
+                >
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button type="button" class="topbar-icon" aria-label="Search" title="Search">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+
+                <button type="button" class="topbar-icon" aria-label="Notifications" title="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+
+                <div class="topbar-divider"></div>
+
+                
+                <a href="../profile/profile.html"
+                class="profile-link"
+                aria-label="Go to profile">
+
+                    <div class="profile-text">
+                        <div id="profileName">Fashion Muse</div>
+                        <span>PREMIUM</span>
+                    </div>
+
+                    <div class="profile-avatar">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+
+                </a>
+
+
+            </div>
+        </header>
+
+
+        <main>
+
+            <!-- HERO -->
+            <section class="hero">
+
+                <div class="hero-content">
+                    <div class="hero-copy">
+                        <div class="hero-badge">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <span>STYLEVAULT INTELLIGENCE</span>
+                        </div>
+                        <h1>AI Outfit Assistant</h1>
+                        <p>Your personal stylist for everyday looks, creative combinations, and event-specific outfits using the clothes you already own.</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- TWO-COLUMN CONTENT -->
+            <section class="content-grid">
+
+                <!-- LEFT COLUMN -->
+                <aside class="left-column">
+
+                    <!-- QUICK PROMPTS -->
+                    <section class="panel quick-prompts-panel">
+
+                        <div class="panel-heading">
+                            <span class="section-kicker">QUICK PROMPTS</span>
+                            <span class="material-symbols-outlined section-icon">
+                                lightbulb
+                            </span>
+                        </div>
+
+                        <p class="panel-description">
+                            A little inspiration to get you started.
+                        </p>
+
+                        <div class="prompt-list">
+
+                            <button
+                                type="button"
+                                class="prompt-button"
+                                data-prompt="Suggest a casual college outfit using only clothes in my wardrobe."
+                            >
+                                <span>Help me style a college outfit</span>
+                                <span class="material-symbols-outlined prompt-arrow">
+                                    arrow_forward
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="prompt-button"
+                                data-prompt="Suggest an outfit for an evening outing using my wardrobe."
+                            >
+                                <span>Put together an evening look</span>
+                                <span class="material-symbols-outlined prompt-arrow">
+                                    arrow_forward
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="prompt-button"
+                                data-prompt="Suggest an outfit for rainy weather using my wardrobe. If I don't have suitable pieces, tell me."
+                            >
+                                <span>Style me for rainy weather</span>
+                                <span class="material-symbols-outlined prompt-arrow">
+                                    arrow_forward
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="prompt-button"
+                                data-prompt="Help me mix and match clothing items from my wardrobe to create a new outfit."
+                            >
+                                <span>Mix and match my clothes</span>
+                                <span class="material-symbols-outlined prompt-arrow">
+                                    arrow_forward
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- REALISTIC EMPTY INSIGHTS STATE -->
+                    <section class="panel insights-panel">
+
+                        <div class="panel-heading">
+                            <div class="insights-title">
+                                <span class="material-symbols-outlined section-icon">
+                                    analytics
+                                </span>
+                                <span class="section-kicker">STYLE INSIGHTS</span>
+                            </div>
+                        </div>
+
+                        <div class="insights-empty">
+
+                            <div class="insights-empty-icon">
+                                <span class="material-symbols-outlined">
+                                    auto_awesome
+                                </span>
+                            </div>
+
+                            <h3>Your style, discovered over time.</h3>
+
+                            <p>
+                                As you track your wardrobe and explore outfit
+                                ideas, you can use your clothing and preferences
+                                to make more informed styling choices.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+
+                <!-- RIGHT COLUMN: CHAT -->
+                <section class="chat-panel">
+
+                    <!-- CHAT HEADER -->
+                    <div class="chat-header">
+
+                        <div class="chat-identity">
+
+                            <div class="muse-avatar">
+                                <span class="material-symbols-outlined">
+                                    auto_awesome
+                                </span>
+                            </div>
+
+                            <div>
+                                <h2 class="chat-title">Muse</h2>
+                                <span class="chat-subtitle">AI STYLIST</span>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="clear-chat"
+                            class="icon-button"
+                            title="Clear conversation"
+                            aria-label="Clear conversation"
+                        >
+                            <span class="material-symbols-outlined">
+                                delete_sweep
+                            </span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- CHAT HISTORY -->
+                    <div
+                        class="chat-history"
+                        id="chat-container"
+                        aria-live="polite"
+                        aria-label="Conversation with Muse"
+                    >
+
+                        <div class="message assistant-message welcome-message">
+
+                            <div class="message-avatar">
+                                <span class="material-symbols-outlined">
+                                    auto_awesome
+                                </span>
+                            </div>
+
+                            <div class="message-body">
+                                <div class="message-label">MUSE</div>
+
+                                <div class="message-bubble">
+                                    Hi there! ✨ Let's make the most of what
+                                    you already own. Tell me about your plans,
+                                    the kind of look you're going for, or a
+                                    piece of clothing you'd like to style.
+                                    I'll help you put together an outfit
+                                    from your StyleVault wardrobe.
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TYPING / REQUEST STATUS -->
+                    <div
+                        id="typing-indicator"
+                        class="typing-indicator"
+                        aria-live="polite"
+                        hidden
+                    >
+                        <span class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span>Muse is thinking...</span>
+                    </div>
+
+
+                    <!-- MESSAGE INPUT -->
+                    <div class="chat-input-area">
+
+                        <form id="chat-form" class="chat-form">
+
+                            <textarea
+                                id="message-input"
+                                name="message"
+                                rows="1"
+                                maxlength="4000"
+                                placeholder="Ask Muse for styling advice..."
+                                aria-label="Ask Muse for styling advice"
+                                required
+                            ></textarea>
+
+                            <button
+                                type="submit"
+                                id="send-button"
+                                class="send-button"
+                                aria-label="Send message"
+                            >
+                                <span class="material-symbols-outlined">
+                                    send
+                                </span>
+                            </button>
+
+                        </form>
+
+                        <div class="chat-footnote">
+                            AI can make mistakes. Consider verifying recommendations.
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

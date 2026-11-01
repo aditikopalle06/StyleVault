@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StyleVault - My Wardrobe</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="wardrobe.css">
+    
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar" id="mobileSidebar">
+
+        <div class="logo-section">
+
+            <span class="logo-text">
+                StyleVault
+            </span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="../dashboard/dashboard.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <!-- Wardrobe -->
+
+            <a
+                href="wardrobe.html"
+                class="nav-link active"
+            >
+
+                <span class="material-symbols-outlined">
+                    checkroom
+                </span>
+
+                Wardrobe
+
+            </a>
+
+
+            <!-- Outfits -->
+
+            <a
+                href="../outfits/outfits.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    styler
+                </span>
+
+                Outfits
+
+            </a>
+
+
+            <!-- Calendar -->
+
+            <a
+                href="../calendar/calendar.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
+                Calendar
+
+            </a>
+
+
+            <!-- Wear History -->
+
+            <a
+                href="../wear_history/wear_history.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+
+                Wear History
+
+            </a>
+
+
+            <!-- Analytics -->
+
+            <a
+                href="../analytics/analytics.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    insights
+                </span>
+
+                Analytics
+
+            </a>
+
+
+            <!-- AI Assistant -->
+
+            <a
+                href="../ai_assistant/ai_assistant.html"
+                class="nav-link ai-link"
+                id="aiAssistantLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    auto_awesome
+                </span>
+
+                AI Assistant
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="../preferences/preferences.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+
+                Preferences
+
+            </a>
+
+        </div>
+
+    </aside>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+
+    <!-- =================================================
+         MAIN AREA
+    ================================================== -->
+
+    <div class="main-area">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="top-bar">
+
+            <div><button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="mobileSidebar"
+                aria-expanded="false"
+            >
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+</div>
+
+
+            <div
+                class="profile-area"
+                id="profileButton"
+            >
+
+
+                <!-- Search -->
+
+                <button
+                    class="top-icon"
+                    type="button"
+                    id="topSearchButton"
+                >
+
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+
+                </button>
+
+
+                <!-- Notifications -->
+
+                <button
+                    class="top-icon"
+                    type="button"
+                    id="notificationButton"
+                >
+
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                </button>
+
+
+                <div class="profile-divider"></div>
+
+
+                <!-- Profile Information -->
+
+                <div class="profile-details">
+
+                    <p id="displayName">
+                        User
+                    </p>
+
+                    <span>
+                        StyleVault
+                    </span>
+
+                </div>
+
+
+                <!-- Profile Icon -->
+
+                <div class="profile-circle">
+
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             WARDROBE
+        ================================================== -->
+
+        <main class="wardrobe">
+
+
+            <div class="wardrobe-content">
+
+
+                <!-- =================================================
+                     PAGE HEADER
+                ================================================== -->
+
+                <div class="wardrobe-header">
+
+
+                    <div>
+
+                        <h1>
+                            My Wardrobe
+                        </h1>
+
+
+                        <p class="page-description">
+                            Keep track of everything you own and make more out of your wardrobe.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="add-button"
+                        id="addClothingBtn"
+                        type="button"
+                    >
+
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+
+                        Add New Item
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SEARCH + FILTERS
+                ================================================== -->
+
+                <section class="wardrobe-tools">
+
+
+                    <!-- Search -->
+
+                    <div class="search-box">
+
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search your wardrobe..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Filters -->
+
+                    <div class="filter-group">
+
+
+                        <!-- Category -->
+
+                        <select id="categoryFilter">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="top">
+                                Tops
+                            </option>
+
+                            <option value="bottom">
+                                Bottoms
+                            </option>
+
+                            <option value="dress">
+                                Dresses
+                            </option>
+
+                            <option value="outerwear">
+                                Outerwear
+                            </option>
+
+                            <option value="shoes">
+                                Shoes
+                            </option>
+
+                            <option value="accessories">
+                                Accessories
+                            </option>
+
+                        </select>
+
+
+
+                        <!-- Colour -->
+
+                        <select id="colourFilter">
+
+                            <option value="all">
+                                All Colours
+                            </option>
+
+                            <option value="black">
+                                Black
+                            </option>
+
+                            <option value="white">
+                                White
+                            </option>
+
+                            <option value="blue">
+                                Blue
+                            </option>
+
+                            <option value="red">
+                                Red
+                            </option>
+
+                            <option value="pink">
+                                Pink
+                            </option>
+
+                            <option value="green">
+                                Green
+                            </option>
+
+                            <option value="yellow">
+                                Yellow
+                            </option>
+
+                            <option value="brown">
+                                Brown
+                            </option>
+
+                            <option value="beige">
+                                Beige
+                            </option>
+
+                            <option value="grey">
+                                Grey
+                            </option>
+
+                        </select>
+
+
+
+                        <!-- Season -->
+
+                        <select id="seasonFilter">
+
+                            <option value="all">
+                                All Seasons
+                            </option>
+
+                            <option value="summer">
+                                Summer
+                            </option>
+
+                            <option value="winter">
+                                Winter
+                            </option>
+
+                            <option value="spring">
+                                Spring
+                            </option>
+
+                            <option value="autumn">
+                                Autumn
+                            </option>
+
+                            <option value="all-season">
+                                All Season
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     ITEM COUNT
+                ================================================== -->
+
+                <div class="wardrobe-info">
+
+                    <p id="itemCount">
+                        0 items
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CLOTHING GRID
+                ================================================== -->
+
+                <section
+                    class="wardrobe-grid"
+                    id="wardrobeGrid"
+                >
+
+                    <!-- Clothing cards are generated by wardrobe.js -->
+
+                </section>
+
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
+                <section
+                    class="empty-state"
+                    id="emptyState"
+                >
+
+                    <span class="material-symbols-outlined">
+                        checkroom
+                    </span>
+
+
+                    <h2>
+                        Your wardrobe is empty
+                    </h2>
+
+
+                    <p>
+                        Add your first clothing item to start building your digital wardrobe.
+                    </p>
+
+
+                    <button
+                        class="add-button"
+                        id="emptyAddButton"
+                        type="button"
+                    >
+
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+
+                        Add Clothing
+
+                    </button>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     LOADING STATE
+                ================================================== -->
+
+                <div
+                    class="loading-state"
+                    id="loadingState"
+                >
+
+                    Loading your wardrobe...
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ERROR STATE
+                ================================================== -->
+
+                <div
+                    class="error-state"
+                    id="errorState"
+                >
+
+                    Unable to load your wardrobe.
+                    Please try again.
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="wardrobe.js"></script>
+    <script src="../common.js"></script>
+
+    
+
+</body>
+
+</html>

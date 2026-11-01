@@ -4,16 +4,25 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>StyleVault - Profile</title>
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="profile.css">
+
+    <link
+        rel="stylesheet"
+        href="profile.css"
+    >
 
 </head>
 
@@ -21,9 +30,14 @@
 <body>
 
 
-    <!-- SIDEBAR -->
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
 
-    <aside class="sidebar">
+    <aside class="sidebar" id="mobileSidebar">
+
+
+        <!-- LOGO -->
 
         <div class="logo-section">
 
@@ -34,9 +48,18 @@
         </div>
 
 
+
+        <!-- NAVIGATION -->
+
         <nav class="navigation">
 
-            <a href="../dashboard/dashboard.html" class="nav-link">
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="../dashboard/dashboard.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     dashboard
@@ -47,7 +70,13 @@
             </a>
 
 
-            <a href="#" class="nav-link">
+
+            <!-- WARDROBE -->
+
+            <a
+                href="../wardrobe/wardrobe.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     checkroom
@@ -58,7 +87,13 @@
             </a>
 
 
-            <a href="#" class="nav-link">
+
+            <!-- OUTFITS -->
+
+            <a
+                href="../outfits/outfits.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     styler
@@ -69,7 +104,13 @@
             </a>
 
 
-            <a href="#" class="nav-link">
+
+            <!-- CALENDAR -->
+
+            <a
+                href="../calendar/calendar.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     calendar_today
@@ -80,7 +121,13 @@
             </a>
 
 
-            <a href="#" class="nav-link">
+
+            <!-- WEAR HISTORY -->
+
+            <a
+                href="../wear_history/wear_history.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     history
@@ -91,7 +138,13 @@
             </a>
 
 
-            <a href="#" class="nav-link">
+
+            <!-- ANALYTICS -->
+
+            <a
+                href="../analytics/analytics.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     insights
@@ -102,7 +155,13 @@
             </a>
 
 
-            <a href="#" class="nav-link ai-link">
+
+            <!-- AI ASSISTANT -->
+
+            <a
+                href="../ai_assistant/ai_assistant.html"
+                class="nav-link ai-link"
+            >
 
                 <span class="material-symbols-outlined">
                     auto_awesome
@@ -112,12 +171,22 @@
 
             </a>
 
+
         </nav>
 
 
+
+        <!-- SIDEBAR BOTTOM -->
+
         <div class="sidebar-bottom">
 
-            <a href="../preferences/preferences.html" class="nav-link">
+
+            <!-- PREFERENCES -->
+
+            <a
+                href="../preferences/preferences.html"
+                class="nav-link"
+            >
 
                 <span class="material-symbols-outlined">
                     settings
@@ -127,27 +196,54 @@
 
             </a>
 
+
         </div>
 
+
     </aside>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
 
 
-    <!-- MAIN AREA -->
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
 
     <div class="main-area">
 
 
-        <!-- TOP BAR -->
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
 
         <header class="top-bar">
 
-            <div></div>
+
+            <div class="topbar-left">
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-controls="mobileSidebar"
+                    aria-expanded="false"
+                >
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
 
 
             <div class="profile-area">
 
-                <button class="top-icon">
+
+                <!-- SEARCH -->
+
+                <button
+                    class="top-icon"
+                    type="button"
+                    aria-label="Search wardrobe"
+                >
 
                     <span class="material-symbols-outlined">
                         search
@@ -156,7 +252,14 @@
                 </button>
 
 
-                <button class="top-icon">
+
+                <!-- NOTIFICATIONS -->
+
+                <button
+                    class="top-icon"
+                    type="button"
+                    aria-label="Notifications"
+                >
 
                     <span class="material-symbols-outlined">
                         notifications
@@ -165,8 +268,12 @@
                 </button>
 
 
+
                 <div class="profile-divider"></div>
 
+
+
+                <!-- PROFILE DETAILS -->
 
                 <div class="profile-details">
 
@@ -181,6 +288,9 @@
                 </div>
 
 
+
+                <!-- PROFILE ICON -->
+
                 <div class="profile-circle">
 
                     <span class="material-symbols-outlined">
@@ -189,13 +299,17 @@
 
                 </div>
 
+
             </div>
+
 
         </header>
 
 
 
-        <!-- PROFILE CONTENT -->
+        <!-- =================================================
+             PROFILE CONTENT
+        ================================================== -->
 
         <main class="profile-page">
 
@@ -203,13 +317,17 @@
             <div class="profile-content">
 
 
-                <!-- PAGE HEADER -->
+                <!-- =================================================
+                     PAGE HEADER
+                ================================================== -->
 
                 <section class="page-header">
+
 
                     <p class="section-label">
                         ACCOUNT
                     </p>
+
 
 
                     <h1>
@@ -217,17 +335,22 @@
                     </h1>
 
 
+
                     <p>
                         Manage your StyleVault account information.
                     </p>
+
 
                 </section>
 
 
 
-                <!-- PROFILE SUMMARY -->
+                <!-- =================================================
+                     PROFILE SUMMARY
+                ================================================== -->
 
                 <section class="profile-summary">
+
 
                     <div class="profile-avatar">
 
@@ -238,47 +361,64 @@
                     </div>
 
 
+
                     <div class="profile-summary-text">
+
 
                         <h2 id="profileName">
                             User
                         </h2>
 
+
+
                         <p id="profileUsername">
                             @username
                         </p>
 
+
                     </div>
+
 
                 </section>
 
 
 
-                <!-- ACCOUNT INFORMATION -->
+                <!-- =================================================
+                     ACCOUNT INFORMATION
+                ================================================== -->
 
                 <section class="profile-section">
 
+
                     <div class="section-heading">
+
 
                         <h2>
                             Account Information
                         </h2>
 
+
                         <p>
                             Your basic account details.
                         </p>
 
+
                     </div>
+
 
 
                     <div class="form-grid">
 
 
+                        <!-- NAME -->
+
                         <div class="form-field">
+
 
                             <label for="name">
                                 Name
                             </label>
+
 
                             <input
                                 type="text"
@@ -287,14 +427,20 @@
                                 placeholder="Your name"
                             >
 
+
                         </div>
 
 
+
+                        <!-- USERNAME -->
+
                         <div class="form-field">
+
 
                             <label for="username">
                                 Username
                             </label>
+
 
                             <input
                                 type="text"
@@ -303,14 +449,20 @@
                                 placeholder="Your username"
                             >
 
+
                         </div>
 
 
+
+                        <!-- EMAIL -->
+
                         <div class="form-field full-width">
+
 
                             <label for="email">
                                 Email
                             </label>
+
 
                             <input
                                 type="email"
@@ -319,45 +471,59 @@
                                 placeholder="your@email.com"
                             >
 
+
                         </div>
 
 
                     </div>
+
 
                 </section>
 
 
 
-                <!-- ACCOUNT SECURITY -->
+                <!-- =================================================
+                     ACCOUNT SECURITY
+                ================================================== -->
 
                 <section class="profile-section">
 
+
                     <div class="section-heading">
+
 
                         <h2>
                             Account Security
                         </h2>
 
+
                         <p>
                             Manage your account security.
                         </p>
 
+
                     </div>
+
 
 
                     <div class="security-row">
 
+
                         <div>
+
 
                             <h3>
                                 Password
                             </h3>
 
+
                             <p>
                                 Your password is securely stored.
                             </p>
 
+
                         </div>
+
 
 
                         <button
@@ -368,15 +534,20 @@
                             Change Password
                         </button>
 
+
                     </div>
+
 
                 </section>
 
 
 
-                <!-- ACTIONS -->
+                <!-- =================================================
+                     ACTIONS
+                ================================================== -->
 
                 <div class="profile-actions">
+
 
                     <button
                         type="button"
@@ -387,6 +558,7 @@
                     </button>
 
 
+
                     <button
                         type="button"
                         class="logout-button"
@@ -395,8 +567,12 @@
                         Log Out
                     </button>
 
+
                 </div>
 
+
+
+                <!-- MESSAGE -->
 
                 <p
                     class="profile-message"
@@ -406,6 +582,7 @@
 
             </div>
 
+
         </main>
 
 
@@ -413,7 +590,13 @@
 
 
 
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script src="profile.js"></script>
+    <script src="../common.js"></script>
+
 
 </body>
 

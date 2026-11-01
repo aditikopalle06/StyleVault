@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleVault - Add Clothing</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ["Hanken Grotesk", "sans-serif"],
+                        serif: ["Playfair Display", "serif"]
+                    },
+                    colors: {
+                        surface: { bright: "#ffffff" },
+                        outline: { variant: "#e5e1df" }
+                    }
+                }
+            }
+        };
+    </script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css"
+>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="add_clothing.css">
+    
+
+<body class="bg-[#f3ede8] text-[#1d1b19]">
+    <!-- SIDEBAR -->
+    <aside id="mobileSidebar" class="sidebar fixed left-0 top-0 h-screen w-[260px] bg-white border-r border-[#e5e1df] flex flex-col">
+        <div class="px-8 py-8">
+            <a href="../dashboard/dashboard.html" class="font-serif text-2xl font-semibold">
+                StyleVault
+            </a>
+        </div>
+
+        <nav class="px-4 flex flex-col gap-2">
+            <a href="../dashboard/dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+
+            <a href="../wardrobe/wardrobe.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">checkroom</span>
+                Wardrobe
+            </a>
+
+            <a href="../outfits/outfits.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">styler</span>
+                Outfits
+            </a>
+
+            <a href="../calendar/calendar.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">calendar_today</span>
+                Calendar
+            </a>
+
+            <a href="../wear_history/wear_history.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">history</span>
+                Wear History
+            </a>
+
+            <a href="../analytics/analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">insights</span>
+                Analytics
+            </a>
+
+            <a href="../ai_assistant/ai_assistant.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                AI Assistant
+            </a>
+        </nav>
+
+        <div class="mt-auto px-4 pb-6">
+            <a href="../preferences/preferences.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#57534e] hover:bg-[#f5f1ee]">
+                <span class="material-symbols-outlined">settings</span>
+                Preferences
+            </a>
+        </div>
+    </aside>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- MAIN AREA -->
+    <div class="main-area ml-[260px] min-h-screen">
+        <!-- TOP BAR -->
+        
+
+<header class="top-bar h-[70px] bg-[rgba(255,248,243,0.95)] border-b border-[#e5e1df] flex items-center justify-between px-8">
+
+    <!-- Left: Hamburger menu -->
+    <button
+        type="button"
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        aria-label="Open navigation menu"
+        aria-controls="mobileSidebar"
+        aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <!-- Right: User details -->
+    <div class="flex items-center gap-3">
+        <a href="../profile/profile.html" class="profile-link">
+            <div class="profile-details">
+                <p id="displayName">User</p>
+                <span>StyleVault</span>
+            </div>
+
+            <div class="profile-circle">
+                <span class="material-symbols-outlined">person</span>
+            </div>
+        </a>
+    </div>
+
+</header>
+
+
+
+        <!-- CONTENT -->
+        <main class="px-10 py-10">
+            <div class="mb-8">
+                <p class="uppercase tracking-[0.18em] text-xs text-[#8b7167] mb-2">
+                    YOUR COLLECTION
+                </p>
+
+                <h1 class="font-serif text-4xl font-semibold">
+                    Add Clothing
+                </h1>
+
+                <p class="text-[#78716c] mt-2">
+                    Add a new piece to your digital wardrobe.
+                </p>
+            </div>
+
+            <!-- FORM -->
+            <form id="addClothingForm" class="bg-white border border-[#e5e1df] rounded-2xl p-8 shadow-sm">
+                <!-- IMAGE UPLOAD -->
+                <div class="mb-10">
+                    <h2 class="font-serif text-xl font-semibold mb-4">
+                        Clothing Image
+                    </h2>
+
+                    <div class="relative border-2 border-dashed border-[#d6d0cc] rounded-2xl h-[260px] flex flex-col items-center justify-center overflow-hidden" id="imageUploadArea">
+                        <input type="file" id="clothingImage" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+
+                        <div id="imageUploadContent" class="flex flex-col items-center justify-center text-center">
+                            <span class="material-symbols-outlined text-5xl text-[#a08d84] mb-3">
+                                add_photo_alternate
+                            </span>
+
+                            <p class="font-medium">Upload clothing image</p>
+
+                            <p class="text-sm text-[#78716c] mt-1">
+                                PNG, JPG or JPEG
+                            </p>
+                        </div>
+
+                        <img id="imagePreview" class="hidden absolute inset-0 w-full h-full object-contain bg-[#faf9f7]" alt="Clothing preview">
+                    </div>
+                </div>
+
+                <!-- BASIC DETAILS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label for="garment-name" class="block text-sm font-medium mb-2">
+                            Garment Name
+                        </label>
+
+                        <input type="text" id="garment-name" placeholder="e.g. Black Oversized T-Shirt" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 outline-none focus:border-[#9a7d70]">
+                    </div>
+
+                    <div>
+                        <label for="category" class="block text-sm font-medium mb-2">Category</label>
+
+                        <select id="category" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 bg-white outline-none focus:border-[#9a7d70]">
+                            <option value="">Select category</option>
+                            <option value="top">Tops</option>
+                            <option value="bottom">Bottoms</option>
+                            <option value="dress">Dresses</option>
+                            <option value="outerwear">Outerwear</option>
+                            <option value="shoes">Shoes</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="color" class="block text-sm font-medium mb-2">Colour</label>
+
+                        <select id="color" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 bg-white outline-none focus:border-[#9a7d70]">
+                            <option value="">Select colour</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="pink">Pink</option>
+                            <option value="green">Green</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="brown">Brown</option>
+                            <option value="beige">Beige</option>
+                            <option value="grey">Grey</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="price" class="block text-sm font-medium mb-2">Price</label>
+
+                        <input type="number" id="price" placeholder="e.g. 999" min="0" step="0.01" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 outline-none focus:border-[#9a7d70]">
+                    </div>
+
+                    <div>
+                        <label for="size" class="block text-sm font-medium mb-2">Size</label>
+
+                        <input type="text" id="size" placeholder="e.g. M" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 outline-none focus:border-[#9a7d70]">
+                    </div>
+
+                    <div>
+                        <label for="season" class="block text-sm font-medium mb-2">Season</label>
+
+                        <select id="season" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 bg-white outline-none focus:border-[#9a7d70]">
+                            <option value="">Select season</option>
+                            <option value="summer">Summer</option>
+                            <option value="winter">Winter</option>
+                            <option value="spring">Spring</option>
+                            <option value="autumn">Autumn</option>
+                            <option value="all-season">All Season</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="occasion" class="block text-sm font-medium mb-2">Occasion</label>
+
+                        <select id="occasion" class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 bg-white outline-none focus:border-[#9a7d70]">
+                            <option value="">Select occasion</option>
+                            <option value="casual">Casual</option>
+                            <option value="formal">Formal</option>
+                            <option value="party">Party</option>
+                            <option value="work">Work</option>
+                            <option value="college">College</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="notes" class="block text-sm font-medium mb-2">
+                            Additional Notes
+                        </label>
+
+                        <textarea id="notes" rows="4" placeholder="Add any additional information about this item..." class="w-full border border-[#d6d0cc] rounded-xl px-4 py-3 outline-none resize-none focus:border-[#9a7d70]"></textarea>
+                    </div>
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="flex justify-end gap-4 mt-10 pt-6 border-t border-[#e5e1df]">
+                    <button type="button" id="cancelButton" class="px-6 py-3 rounded-xl border border-[#d6d0cc] text-[#57534e] hover:bg-[#f5f1ee]">
+                        Cancel
+                    </button>
+
+                    <button type="submit" id="saveClothingButton" class="px-6 py-3 rounded-xl bg-[#8b7167] text-white hover:bg-[#755c53] flex items-center gap-2">
+                        <span class="material-symbols-outlined">check</span>
+                        Save to Wardrobe
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <!-- IMAGE CROP MODAL: Add Clothing page only -->
+<div id="cropModal" class="crop-modal" aria-hidden="true">
+    <div
+        class="crop-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cropModalTitle"
+    >
+        <div class="crop-modal-header">
+            <div>
+                <h2 id="cropModalTitle">Crop clothing image</h2>
+                <p>
+                    Drag the image and adjust the crop area around the clothing.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                id="cancelCropButton"
+                class="crop-close-button"
+                aria-label="Cancel crop"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="cropper-stage">
+            <img id="cropImage" alt="Image to crop">
+        </div>
+
+        <div class="crop-modal-actions">
+            <button
+                type="button"
+                id="zoomOutButton"
+                class="crop-secondary-button"
+            >
+                − Zoom
+            </button>
+
+            <button
+                type="button"
+                id="zoomInButton"
+                class="crop-secondary-button"
+            >
+                + Zoom
+            </button>
+
+            <span class="crop-actions-spacer"></span>
+
+            <button
+                type="button"
+                id="cancelCropFooterButton"
+                class="crop-secondary-button"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="applyCropButton"
+                class="crop-primary-button"
+            >
+                Apply Crop
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+<!-- <script src="add_clothing.js"></script>
+<script src="../common.js"></script> -->
+
+    <script src="add_clothing.js"></script>
+    <script src="../common.js"></script>
+</body>
+</html>

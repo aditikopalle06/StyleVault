@@ -5,3 +5,12 @@ backend/.env.*
 
 .DS_Store
 *.log
+
+# Python cache files
+__pycache__/
+*.py[cod]
+**/__pycache__/
+# Python virtual environments
+venv/
+.venv/
+/image_service/__pycache__/

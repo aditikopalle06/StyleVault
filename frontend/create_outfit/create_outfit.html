@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Outfit | StyleVault</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    >
+
+
+    <!-- Material Symbols -->
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="create_outfit.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="mobileSidebar">
+
+        <div class="logo-section">
+
+            <span>
+                StyleVault
+            </span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a
+                href="#"
+                id="dashboardLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#"
+                id="wardrobeLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    checkroom
+                </span>
+
+                Wardrobe
+
+            </a>
+
+
+            <a
+                href="#"
+                class="active"
+            >
+
+                <span class="material-symbols-outlined">
+                    styler
+                </span>
+
+                Outfits
+
+            </a>
+
+
+            <a
+                href="#"
+                id="calendarLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
+                Calendar
+
+            </a>
+
+
+            <a
+                href="#"
+                id="wearHistoryLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+
+                Wear History
+
+            </a>
+
+
+            <a
+                href="#"
+                id="analyticsLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    insights
+                </span>
+
+                Analytics
+
+            </a>
+
+
+            <a
+                href="../ai_assistant/ai_assistant.html"
+                id="aiAssistantLink"
+                class="ai-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    magic_button
+                </span>
+
+                AI Assistant
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                id="preferencesLink"
+            >
+
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+
+                Preferences
+
+            </a>
+
+        </div>
+
+    </aside>
+    <div
+    class="mobile-menu-overlay"
+    id="mobileMenuOverlay"
+    aria-hidden="true"
+></div>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="page">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+    <button
+        type="button"
+        id="mobileMenuButton"
+        class="mobile-menu-button"
+        aria-label="Open navigation menu"
+        aria-controls="siteSidebar"
+        aria-expanded="false"
+    >
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</div>
+
+
+            <div class="topbar-right">
+
+
+                <button id="topSearchButton">
+
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+
+                </button>
+
+
+                <button id="notificationButton">
+
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="profile-section"
+                    id="profileSection"
+                >
+
+                    <div class="profile-text">
+
+                        <div id="profileName">
+                            Fashion Muse
+                        </div>
+
+                        <span>
+                            Premium
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-avatar">
+
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        Compose Look
+                    </h1>
+
+
+                    <p>
+                        Curate items from your wardrobe to create a cohesive ensemble.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="saveOutfitButton"
+                    class="save-button"
+                >
+
+                    <span class="material-symbols-outlined">
+                        check
+                    </span>
+
+                    Save Outfit
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= THREE COLUMN LAYOUT ================= -->
+
+            <div class="builder-layout">
+
+
+                <!-- ================= LEFT : DETAILS ================= -->
+
+                <section class="details-column">
+
+
+                    <div class="details-card">
+
+                        <h2>
+                            Details
+                        </h2>
+
+
+                        <!-- LOOK NAME -->
+
+                        <div class="form-group">
+
+                            <label for="outfitName">
+                                Look Name
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="outfitName"
+                                placeholder="e.g. Sunday Brunch"
+                            >
+
+                        </div>
+
+
+
+                        <!-- OCCASION -->
+
+                        <div class="form-group">
+
+                            <label for="occasion">
+                                Occasion
+                            </label>
+
+
+                            <select id="occasion">
+
+                                <option value="">
+                                    Select occasion
+                                </option>
+
+                                <option value="Casual">
+                                    Casual
+                                </option>
+
+                                <option value="Work">
+                                    Work
+                                </option>
+
+                                <option value="Evening">
+                                    Evening
+                                </option>
+
+                                <option value="Festive">
+                                    Festive
+                                </option>
+
+                                <option value="Travel">
+                                    Travel
+                                </option>
+
+                                <option value="Party">
+                                    Party
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- SELECTED INFO -->
+
+                        <div class="selected-info">
+
+                            <span class="material-symbols-outlined">
+                                styler
+                            </span>
+
+
+                            <div>
+
+                                <strong id="selectedCount">
+                                    0 items
+                                </strong>
+
+                                <p>
+                                    Drag wardrobe pieces onto the canvas.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HELPER CARD -->
+
+                    <div class="helper-card">
+
+                        <div class="helper-title">
+
+                            <span class="material-symbols-outlined">
+                                touch_app
+                            </span>
+
+                            <span>
+                                HOW IT WORKS
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Drag clothing pieces from your wardrobe onto the canvas.
+                            Arrange them however you like, then save your look.
+                        </p>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- ================= CENTER : CANVAS ================= -->
+
+                <section class="canvas-column">
+
+
+                    <div class="canvas-wrapper">
+
+
+                        <div class="canvas-label">
+                            CANVAS
+                        </div>
+
+
+                        <button
+                            id="clearCanvasButton"
+                            class="clear-button"
+                        >
+
+                            <span class="material-symbols-outlined">
+                                delete_sweep
+                            </span>
+
+                            Clear
+
+                        </button>
+
+
+
+                        <!-- GRID -->
+
+                        <div class="canvas-grid"></div>
+
+
+
+                        <!-- CENTER MARKER -->
+
+                        <div class="canvas-marker">
+                            +
+                        </div>
+
+
+
+                        <!-- ACTUAL DROP AREA -->
+
+                        <div
+                            id="outfitCanvas"
+                            class="outfit-canvas"
+                        >
+
+
+                            <div
+                                id="canvasEmptyMessage"
+                                class="canvas-empty-message"
+                            >
+
+                                <span class="material-symbols-outlined">
+                                    add_photo_alternate
+                                </span>
+
+
+                                <strong>
+                                    Build your look
+                                </strong>
+
+
+                                <p>
+                                    Drag clothing items here
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ZOOM -->
+
+                        <div class="zoom-controls">
+
+                            <button id="zoomOut">
+                                −
+                            </button>
+
+
+                            <span id="zoomValue">
+                                100%
+                            </span>
+
+
+                            <button id="zoomIn">
+                                +
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= RIGHT : WARDROBE ================= -->
+
+                <section class="wardrobe-column">
+
+
+                    <div class="wardrobe-header">
+
+
+                        <div class="category-tabs">
+
+
+                            <button
+                                class="category-button active"
+                                data-category="all"
+                            >
+                                All
+                            </button>
+
+
+                            <button
+                                class="category-button"
+                                data-category="top"
+                            >
+                                Tops
+                            </button>
+
+
+                            <button
+                                class="category-button"
+                                data-category="bottom"
+                            >
+                                Bottoms
+                            </button>
+
+                            <button
+                                class="category-button"
+                                data-category="dress"
+                            >
+                                Dresses
+                            </button>
+
+                            <button
+                                class="category-button"
+                                data-category="outerwear"
+                            >
+                                Outerwear
+                            </button>
+
+
+                            <button
+                                class="category-button"
+                                data-category="shoes"
+                            >
+                                Shoes
+                            </button>
+
+
+                            <button
+                                class="category-button"
+                                data-category="accessories"
+                            >
+                                Accessories
+                            </button>
+
+
+                        </div>
+
+
+
+                        <div class="wardrobe-search">
+
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="wardrobeSearch"
+                                placeholder="Search wardrobe..."
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div
+                        id="wardrobeGrid"
+                        class="wardrobe-grid"
+                    >
+
+                        <!-- JavaScript loads wardrobe items here -->
+
+                    </div>
+
+
+
+                    <div
+                        id="wardrobeEmpty"
+                        class="wardrobe-empty hidden"
+                    >
+
+                        <span class="material-symbols-outlined">
+                            checkroom
+                        </span>
+
+
+                        <p>
+                            No wardrobe items found.
+                        </p>
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <script src="create_outfit.js"></script>
+    <script src="../common.js"></script>
+
+</body>
+
+</html>

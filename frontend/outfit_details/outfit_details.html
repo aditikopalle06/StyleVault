@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleVault - Outfit Details</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="outfit_details.css">
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo-section">
+            <span class="logo-text">StyleVault</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="../dashboard/dashboard.html" class="nav-link">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+
+            <a href="../wardrobe/wardrobe.html" class="nav-link">
+                <span class="material-symbols-outlined">checkroom</span>
+                Wardrobe
+            </a>
+
+            <a href="../outfits/outfits.html" class="nav-link active">
+                <span class="material-symbols-outlined">styler</span>
+                Outfits
+            </a>
+
+            <a href="../calendar/calendar.html" class="nav-link">
+                <span class="material-symbols-outlined">calendar_today</span>
+                Calendar
+            </a>
+
+            <a href="../wear_history/wear_history.html" class="nav-link">
+                <span class="material-symbols-outlined">history</span>
+                Wear History
+            </a>
+
+            <a href="../analytics/analytics.html" class="nav-link">
+                <span class="material-symbols-outlined">insights</span>
+                Analytics
+            </a>
+
+            <a href="../ai_assistant/ai_assistant.html" class="nav-link ai-link">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                AI Assistant
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../preferences/preferences.html" class="nav-link">
+                <span class="material-symbols-outlined">settings</span>
+                Preferences
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="main-area">
+        <header class="top-bar">
+            <div></div>
+
+            <div class="profile-area">
+                <button class="top-icon" type="button" aria-label="Search">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+
+                <button class="top-icon" type="button" aria-label="Notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+
+                <div class="profile-divider"></div>
+
+                <div class="profile-details" id="profileDetails">
+                    <p id="displayName">User</p>
+                    <span>StyleVault</span>
+                </div>
+
+                <button class="profile-circle" id="profileButton" type="button" aria-label="Profile">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="details-page">
+            <!-- LOADING -->
+            <div class="loading-state" id="loadingState">
+                Loading outfit details...
+            </div>
+
+            <!-- ERROR -->
+            <div class="error-state" id="errorState">
+                <span class="material-symbols-outlined">error</span>
+                <p>Unable to load this outfit.</p>
+
+                <button class="secondary-button" id="backFromErrorButton" type="button">
+                    Go Back
+                </button>
+            </div>
+
+            <!-- DETAILS -->
+            <div class="details-container" id="detailsContainer">
+                <!-- LEFT SIDE -->
+                <div class="image-section">
+                    <div class="mobile-actions">
+                        <button class="round-button" id="backButtonMobile" type="button" aria-label="Go back">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+
+                        <button class="round-button" id="editButtonMobile" type="button" aria-label="Edit outfit">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </div>
+
+                    <div class="outfit-image-card">
+                        <div class="image-actions">
+                            <button class="round-button" id="editButton" type="button" title="Edit Outfit">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+
+                            <button class="round-button delete-button" id="deleteButton" type="button" title="Delete Outfit">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </div>
+
+                        <div class="outfit-canvas" id="outfitCanvas">
+                            <!-- Clothing items inserted by JavaScript -->
+                        </div>
+
+                        <button class="favourite-button" id="favouriteButton" type="button" title="Favourite">
+                            <span class="material-symbols-outlined" id="favouriteIcon">favorite_border</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="details-section">
+                    <div class="item-category">
+                        <span class="material-symbols-outlined">styler</span>
+                        <span>SAVED OUTFIT</span>
+                    </div>
+
+                    <h1 id="outfitName">Outfit</h1>
+
+                    <div class="item-tags" id="outfitTags"></div>
+
+                    <div class="item-information">
+                        <div class="info-item">
+                            <span class="info-label">Occasion</span>
+                            <span class="info-value" id="infoOccasion">—</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">Items</span>
+                            <span class="info-value" id="infoItemCount">—</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">Created</span>
+                            <span class="info-value" id="infoCreated">—</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">Favourite</span>
+                            <span class="info-value" id="infoFavourite">No</span>
+                        </div>
+                    </div>
+
+                    <div class="items-section">
+                        <h3>Pieces in this Outfit</h3>
+                        <div class="items-list" id="itemsList">
+                            <!-- Items inserted by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="bottom-actions">
+                        <button class="primary-button" id="editBottomButton" type="button">
+                            <span class="material-symbols-outlined">edit</span>
+                            Edit Outfit
+                        </button>
+
+                        <button class="secondary-button" id="backButton" type="button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                            Back to Outfits
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="outfit_details.js"></script>
+</body>
+</html>

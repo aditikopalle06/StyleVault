@@ -665,3 +665,432 @@ body {
     }
 
 }
+
+/* =====================================================
+   PROFILE — MOBILE VIEW
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* Main page layout */
+    .main-area {
+        margin-left: 0;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .profile-page {
+        padding: 24px 16px 40px;
+    }
+
+    .profile-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Top bar */
+    .top-bar {
+        height: 64px;
+        padding: 0 16px;
+        background: #f7f5f0;
+    }
+
+    .profile-area {
+        gap: 12px;
+    }
+
+    .profile-divider {
+        height: 24px;
+        margin: 0;
+    }
+
+    .profile-details p {
+        font-size: 12px;
+    }
+
+    .profile-details span {
+        font-size: 10px;
+    }
+
+    .profile-circle {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+    }
+
+    .top-icon .material-symbols-outlined {
+        font-size: 20px;
+    }
+
+
+    /* Page heading */
+    .page-header {
+        margin-bottom: 24px;
+    }
+
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 9px;
+    }
+
+    .page-header > p:last-child {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* Profile summary — distinct mobile profile card */
+    /* Profile summary — match Preferences mobile cards */
+.profile-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 22px 18px;
+    margin-bottom: 18px;
+
+    background: #ffffff;
+    border: 1px solid #e4e2dc;
+    border-radius: 9px;
+    box-shadow: 0 2px 8px rgba(40, 45, 38, 0.03);
+}
+
+/* Avatar — use the same neutral colors */
+.profile-avatar {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+
+    background: #e2e4dc;
+    color: #555a50;
+}
+
+    .profile-avatar .material-symbols-outlined {
+        font-size: 36px;
+    }
+
+    .profile-summary-text h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    .profile-summary-text p {
+        font-size: 13px;
+    }
+
+
+    /* Account information and security cards */
+    .profile-section {
+    padding: 22px 18px;
+    margin-bottom: 18px;
+
+    border-radius: 9px;
+    border: 1px solid #e4e2dc;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(40, 45, 38, 0.03);
+}
+
+    .section-heading {
+        margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    /* Form fields */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .form-field.full-width {
+        grid-column: auto;
+    }
+
+    .form-field {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .form-field label {
+        font-size: 12px;
+    }
+
+    .form-field input {
+    background: #fafaf7;
+    border: 1px solid #d8d9d2;
+    color: #3d4039;
+}
+
+.form-field input:focus {
+    border-color: #7b836f;
+}
+
+
+    /* Security section */
+    .security-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .security-row h3 {
+        font-size: 14px;
+    }
+
+    .security-row p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .secondary-button {
+        width: 100%;
+        min-height: 44px;
+        padding: 12px 16px;
+
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+
+    /* Save and logout buttons */
+    .profile-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+
+        padding: 4px 0;
+    }
+
+    .save-button,
+    .logout-button {
+        width: 100%;
+        min-height: 46px;
+
+        padding: 13px 18px;
+        border-radius: 9px;
+
+        font-size: 14px;
+    }
+
+    .save-button {
+        background: #3f463a;
+    }
+
+    .logout-button {
+        background: #ffffff;
+        border-color: #deded6;
+    }
+
+    .profile-message {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+
+    .profile-page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .profile-summary {
+        padding: 20px 16px;
+    }
+
+    .profile-section {
+        padding: 20px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 29px;
+    }
+
+    .profile-area {
+        gap: 9px;
+    }
+}
+/* ============================================
+   PROFILE MOBILE HAMBURGER + DRAWER
+============================================ */
+
+.mobile-menu-button,
+.mobile-menu-overlay {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .mobile-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+
+        background: transparent;
+        color: #34382f;
+
+        cursor: pointer;
+    }
+
+    .mobile-menu-button .material-symbols-outlined {
+        font-size: 26px;
+    }
+
+    .top-bar {
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .topbar-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-area {
+        margin-left: auto;
+    }
+
+    /* Slide-in drawer */
+    body .sidebar {
+        display: flex !important;
+
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+
+        width: min(280px, 85vw) !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+
+        z-index: 1101 !important;
+        overflow-y: auto !important;
+
+        background: #ffffff !important;
+
+        transform: translateX(-100%) !important;
+        transition: transform 0.25s ease !important;
+    }
+
+    body .sidebar.mobile-menu-open {
+        transform: translateX(0) !important;
+    }
+
+    /* Restore full navigation labels */
+    .sidebar .logo-section {
+        padding: 28px 24px !important;
+    }
+
+    .sidebar .logo-text {
+        display: inline !important;
+        visibility: visible !important;
+    }
+
+    .sidebar .navigation {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px 16px !important;
+    }
+
+    .sidebar .nav-link {
+        display: flex !important;
+        justify-content: flex-start !important;
+        gap: 13px !important;
+        padding: 12px 14px !important;
+        white-space: nowrap;
+    }
+
+    .sidebar .sidebar-bottom {
+        margin-top: auto;
+        padding: 16px !important;
+    }
+
+    /* Dark overlay */
+    body .mobile-menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+
+        z-index: 1100;
+
+        background: rgba(29, 27, 25, 0.38);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity 0.25s ease,
+                    visibility 0.25s ease;
+    }
+
+    body .mobile-menu-overlay.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Keep page content full-width */
+    .main-area {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+/* Match Preferences mobile sidebar theme */
+@media (max-width: 600px) {
+    body:has(#mobileSidebar) #mobileSidebar {
+        background-color: #30362e !important;
+        border-right: none;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .logo-text {
+        color: #ffffff !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link {
+        color: #e8e9e4 !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link .material-symbols-outlined {
+        color: #e8e9e4 !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link.active {
+        background-color: #e8e9e4 !important;
+        color: #30362e !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link.active .material-symbols-outlined {
+        color: #30362e !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .sidebar-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+}

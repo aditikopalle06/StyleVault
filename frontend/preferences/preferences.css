@@ -477,50 +477,88 @@ textarea:focus {
 
 
 @media (max-width: 700px) {
-
-    .sidebar {
-        position: static;
-
-        width: 100%;
-        height: auto;
-
-        padding: 18px;
-    }
-
-
-    .logo-section {
-        padding: 5px 10px 20px;
-    }
-
-
-    .navigation {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-
-    .sidebar-bottom {
-        margin-top: 10px;
-    }
-
-
+    /* Sidebar is controlled by common.css as a mobile drawer */
     .main-area {
         margin-left: 0;
+        width: 100%;
     }
-
 
     .top-bar {
-        padding: 0 20px;
+        height: 68px;
+        padding: 0 16px;
     }
-
 
     .preferences-page {
-        padding: 30px 18px 50px;
+        padding: 26px 16px 40px;
     }
-
 
     .page-header h1 {
-        font-size: 31px;
+        font-size: 28px;
     }
 
+    .preferences-content {
+        width: 100%;
+    }
+
+    .preference-section {
+        padding: 20px 18px;
+        margin-bottom: 18px;
+    }
+
+    .option-group {
+        gap: 8px;
+    }
+
+    .option-group button {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+}
+/* Preferences-only mobile sidebar theme */
+@media (max-width: 600px) {
+    body:has(#mobileSidebar) #mobileSidebar {
+        background-color: #30362e !important;
+        border-right: none;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .logo-text {
+        color: #ffffff !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link {
+        color: #e8e9e4 !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link .material-symbols-outlined {
+        color: #e8e9e4 !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link.active {
+        background-color: #e8e9e4 !important;
+        color: #30362e !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .nav-link.active .material-symbols-outlined {
+        color: #30362e !important;
+    }
+
+    body:has(#mobileSidebar) #mobileSidebar .sidebar-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+}
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile-link:hover {
+    cursor: pointer;
+}
+
+.profile-link .profile-details {
+    text-align: right;
 }

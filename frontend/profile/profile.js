@@ -1,322 +1,697 @@
 // profile.js
 
 
-document.addEventListener("DOMContentLoaded", function () {
+const API_BASE =
+    "http://localhost:5000";
 
 
-    const storedUser =
-        localStorage.getItem("user");
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
 
 
-    const displayName =
-        document.getElementById("profileName");
+        // =====================================================
+        // ELEMENTS
+        // =====================================================
 
+        const displayName =
+            document.getElementById(
+                "profileName"
+            );
 
-    const username =
-        document.getElementById("profileUsername");
+        const usernameDisplay =
+            document.getElementById(
+                "profileUsername"
+            );
 
+        const topProfileName =
+            document.getElementById(
+                "topProfileName"
+            );
 
-    const topProfileName =
-        document.getElementById("topProfileName");
+        const nameInput =
+            document.getElementById(
+                "name"
+            );
 
+        const usernameInput =
+            document.getElementById(
+                "username"
+            );
 
-    const nameInput =
-        document.getElementById("name");
+        const emailInput =
+            document.getElementById(
+                "email"
+            );
 
+        const saveButton =
+            document.getElementById(
+                "saveProfileButton"
+            );
 
-    const usernameInput =
-        document.getElementById("username");
+        const logoutButton =
+            document.getElementById(
+                "logoutButton"
+            );
 
+        const changePasswordButton =
+            document.getElementById(
+                "changePasswordButton"
+            );
 
-    const emailInput =
-        document.getElementById("email");
+        const message =
+            document.getElementById(
+                "profileMessage"
+            );
 
 
-    const saveButton =
-        document.getElementById("saveProfileButton");
+        // =====================================================
+        // LOGIN CHECK
+        // =====================================================
 
+        let token =
+            localStorage.getItem(
+                "token"
+            );
 
-    const logoutButton =
-        document.getElementById("logoutButton");
 
+        if (!token) {
 
-    const changePasswordButton =
-        document.getElementById("changePasswordButton");
+            window.location.href =
+                "../login/login.html";
 
+            return;
 
-    const message =
-        document.getElementById("profileMessage");
+        }
 
 
+        // =====================================================
+        // NAVIGATION
+        // =====================================================
 
-    // --------------------------------
-    // CHECK LOGIN
-    // --------------------------------
+        setupNavigation();
 
-    const token =
-        localStorage.getItem("token");
 
+        // =====================================================
+        // LOAD PROFILE FROM DATABASE
+        // =====================================================
 
-    if (!token || !storedUser) {
+        await loadProfile();
 
-        alert("Please log in first.");
 
-        window.location.href =
-            "../login/login.html";
+        // =====================================================
+        // SAVE PROFILE
+        // =====================================================
 
-        return;
+        if (saveButton) {
 
-    }
+            saveButton.addEventListener(
+                "click",
+                saveProfile
+            );
 
+        }
 
 
-    // --------------------------------
-    // LOAD USER INFORMATION
-    // --------------------------------
+        // =====================================================
+        // CHANGE PASSWORD
+        // =====================================================
 
-    let user;
+        if (changePasswordButton) {
 
+            changePasswordButton.addEventListener(
+                "click",
+                function () {
 
-    try {
-
-        user = JSON.parse(storedUser);
-
-    } catch (error) {
-
-        console.error(
-            "Unable to read user information:",
-            error
-        );
-
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-
-        window.location.href =
-            "../login/login.html";
-
-        return;
-    }
-
-
-
-    const userName =
-        user.name || user.username || "User";
-
-
-    const userUsername =
-        user.username || "";
-
-
-    const userEmail =
-        user.email || "";
-
-
-
-    // --------------------------------
-    // DISPLAY USER INFORMATION
-    // --------------------------------
-
-    if (displayName) {
-
-        displayName.textContent =
-            userName;
-
-    }
-
-
-    if (username) {
-
-        username.textContent =
-            userUsername
-                ? "@" + userUsername
-                : "";
-
-    }
-
-
-    if (topProfileName) {
-
-        topProfileName.textContent =
-            userName;
-
-    }
-
-
-
-    // --------------------------------
-    // FILL ACCOUNT INFORMATION
-    // --------------------------------
-
-    if (nameInput) {
-
-        nameInput.value =
-            userName;
-
-    }
-
-
-    if (usernameInput) {
-
-        usernameInput.value =
-            userUsername;
-
-    }
-
-
-    if (emailInput) {
-
-        emailInput.value =
-            userEmail;
-
-    }
-
-
-
-    // --------------------------------
-    // SAVE CHANGES
-    // --------------------------------
-
-    if (saveButton) {
-
-        saveButton.addEventListener(
-            "click",
-            function () {
-
-
-                /*
-                 * We are not sending these changes
-                 * to the backend yet because the
-                 * current backend does not have
-                 * a profile update endpoint.
-                 *
-                 * For now, we only update the
-                 * locally stored user information.
-                 */
-
-
-                const updatedUser = {
-
-                    ...user,
-
-                    name:
-                        nameInput.value.trim(),
-
-                    username:
-                        usernameInput.value.trim(),
-
-                    email:
-                        emailInput.value.trim()
-
-                };
-
-
-                localStorage.setItem(
-                    "user",
-                    JSON.stringify(updatedUser)
-                );
-
-
-                // Update the page immediately
-
-                if (displayName) {
-
-                    displayName.textContent =
-                        updatedUser.name ||
-                        updatedUser.username;
+                    alert(
+                        "Change password feature will be added later."
+                    );
 
                 }
+            );
+
+        }
 
 
-                if (username) {
+        // =====================================================
+        // LOGOUT
+        // =====================================================
 
-                    username.textContent =
-                        updatedUser.username
-                            ? "@" +
-                              updatedUser.username
-                            : "";
+        if (logoutButton) {
 
-                }
+            logoutButton.addEventListener(
+                "click",
+                function () {
 
-
-                if (topProfileName) {
-
-                    topProfileName.textContent =
-                        updatedUser.name ||
-                        updatedUser.username;
-
-                }
+                    const confirmed =
+                        confirm(
+                            "Are you sure you want to log out?"
+                        );
 
 
-                if (message) {
+                    if (!confirmed) {
 
-                    message.textContent =
-                        "Changes saved locally.";
+                        return;
 
-                }
-
-            }
-        );
-
-    }
+                    }
 
 
+                    localStorage.removeItem(
+                        "token"
+                    );
 
-    // --------------------------------
-    // CHANGE PASSWORD
-    // --------------------------------
-
-    if (changePasswordButton) {
-
-        changePasswordButton.addEventListener(
-            "click",
-            function () {
-
-                alert(
-                    "Change password will be available once the password update feature is added to the backend."
-                );
-
-            }
-        );
-
-    }
-
-
-
-    // --------------------------------
-    // LOG OUT
-    // --------------------------------
-
-    if (logoutButton) {
-
-        logoutButton.addEventListener(
-            "click",
-            function () {
-
-
-                const confirmLogout =
-                    confirm(
-                        "Are you sure you want to log out?"
+                    localStorage.removeItem(
+                        "user"
                     );
 
 
-                if (!confirmLogout) {
+                    window.location.href =
+                        "../login/login.html";
+
+                }
+            );
+
+        }
+
+
+        // =====================================================
+        // LOAD PROFILE
+        // =====================================================
+
+        async function loadProfile() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${API_BASE}/api/profile`,
+                        {
+                            method: "GET",
+
+                            headers: {
+
+                                "Authorization":
+                                    "Bearer " + token
+
+                            }
+
+                        }
+                    );
+
+
+                if (
+                    response.status === 401 ||
+                    response.status === 403
+                ) {
+
+                    handleSessionExpired();
 
                     return;
 
                 }
 
 
-                localStorage.removeItem("token");
+                const data =
+                    await response.json();
 
-                localStorage.removeItem("user");
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.error ||
+                        "Unable to load profile."
+                    );
+
+                }
 
 
-                window.location.href =
-                    "../login/login.html";
+                const user =
+                    data.user || data;
+
+
+                displayUser(
+                    user
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "Profile loading error:",
+                    error
+                );
+
+
+                if (message) {
+
+                    message.textContent =
+                        "Unable to load profile.";
+
+                }
 
             }
-        );
+
+        }
+
+
+        // =====================================================
+        // DISPLAY USER
+        // =====================================================
+
+        function displayUser(user) {
+
+
+            const userName =
+                user.name ||
+                user.username ||
+                "User";
+
+
+            const userUsername =
+                user.username ||
+                "";
+
+
+            const userEmail =
+                user.email ||
+                "";
+
+
+            // ---------------------------------------------
+            // PROFILE SUMMARY
+            // ---------------------------------------------
+
+            if (displayName) {
+
+                displayName.textContent =
+                    userName;
+
+            }
+
+
+            if (usernameDisplay) {
+
+                usernameDisplay.textContent =
+                    userUsername
+                        ? "@" + userUsername
+                        : "";
+
+            }
+
+
+            // ---------------------------------------------
+            // TOP PROFILE
+            // ---------------------------------------------
+
+            if (topProfileName) {
+
+                topProfileName.textContent =
+                    userName;
+
+            }
+
+
+            // ---------------------------------------------
+            // FORM
+            // ---------------------------------------------
+
+            if (nameInput) {
+
+                nameInput.value =
+                    userName;
+
+            }
+
+
+            if (usernameInput) {
+
+                usernameInput.value =
+                    userUsername;
+
+            }
+
+
+            if (emailInput) {
+
+                emailInput.value =
+                    userEmail;
+
+            }
+
+
+            // ---------------------------------------------
+            // UPDATE LOCAL STORAGE
+            // ---------------------------------------------
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(user)
+            );
+
+        }
+
+
+        // =====================================================
+        // SAVE PROFILE
+        // =====================================================
+
+        async function saveProfile() {
+
+
+            const name =
+                nameInput
+                    ? nameInput.value.trim()
+                    : "";
+
+
+            const username =
+                usernameInput
+                    ? usernameInput.value.trim()
+                    : "";
+
+
+            const email =
+                emailInput
+                    ? emailInput.value.trim()
+                    : "";
+
+
+            // ---------------------------------------------
+            // VALIDATION
+            // ---------------------------------------------
+
+            if (
+                !name ||
+                !username ||
+                !email
+            ) {
+
+                showMessage(
+                    "Please fill in all fields."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                saveButton.disabled =
+                    true;
+
+
+                saveButton.textContent =
+                    "Saving...";
+
+
+                const response =
+                    await fetch(
+                        `${API_BASE}/api/profile`,
+                        {
+
+                            method: "PUT",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json",
+
+                                "Authorization":
+                                    "Bearer " + token
+
+                            },
+
+                            body:
+                                JSON.stringify({
+
+                                    name:
+                                        name,
+
+                                    username:
+                                        username,
+
+                                    email:
+                                        email
+
+                                })
+
+                        }
+                    );
+
+
+                if (
+                    response.status === 401 ||
+                    response.status === 403
+                ) {
+
+                    handleSessionExpired();
+
+                    return;
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    showMessage(
+                        data.error ||
+                        "Unable to save changes."
+                    );
+
+                    return;
+
+                }
+
+
+                // -----------------------------------------
+                // UPDATE LOCAL STORAGE
+                // -----------------------------------------
+
+                const updatedUser =
+                    data.user;
+
+
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(
+                        updatedUser
+                    )
+                );
+
+
+                // -----------------------------------------
+                // UPDATE PAGE
+                // -----------------------------------------
+
+                displayUser(
+                    updatedUser
+                );
+
+
+                showMessage(
+                    "Changes saved successfully."
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "Profile update error:",
+                    error
+                );
+
+
+                showMessage(
+                    "Unable to save changes."
+                );
+
+
+            } finally {
+
+                saveButton.disabled =
+                    false;
+
+                saveButton.textContent =
+                    "Save Changes";
+
+            }
+
+        }
+
+
+        // =====================================================
+        // MESSAGE
+        // =====================================================
+
+        function showMessage(text) {
+
+            if (!message) {
+
+                return;
+
+            }
+
+
+            message.textContent =
+                text;
+
+
+            setTimeout(
+                function () {
+
+                    message.textContent =
+                        "";
+
+                },
+                3000
+            );
+
+        }
+
+
+        // =====================================================
+        // SESSION EXPIRED
+        // =====================================================
+
+        function handleSessionExpired() {
+
+            alert(
+                "Your session has expired. Please login again."
+            );
+
+
+            localStorage.removeItem(
+                "token"
+            );
+
+            localStorage.removeItem(
+                "user"
+            );
+
+
+            window.location.href =
+                "../login/login.html";
+
+        }
+
+
+        // =====================================================
+        // NAVIGATION
+        // =====================================================
+
+        function setupNavigation() {
+
+
+            const navigation = {
+
+                dashboardLink:
+                    "../dashboard/dashboard.html",
+
+                wardrobeLink:
+                    "../wardrobe/wardrobe.html",
+
+                outfitsLink:
+                    "../outfits/outfits.html",
+
+                calendarLink:
+                    "../calendar/calendar.html",
+
+                wearHistoryLink:
+                    "../wear_history/wear_history.html",
+
+                analyticsLink:
+                    "../analytics/analytics.html",
+
+                preferencesLink:
+                    "../preferences/preferences.html"
+
+            };
+
+
+            Object.keys(
+                navigation
+            ).forEach(
+                function (id) {
+
+                    const element =
+                        document.getElementById(
+                            id
+                        );
+
+
+                    if (!element) {
+
+                        return;
+
+                    }
+
+
+                    element.href =
+                        navigation[id];
+
+                }
+            );
+
+
+            // ---------------------------------------------
+            // AI ASSISTANT
+            // ---------------------------------------------
+
+            const aiLink =
+                document.getElementById(
+                    "ai-link"
+                );
+
+
+            if (aiLink) {
+
+                aiLink.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        alert(
+                            "AI Outfit Assistant will be available soon."
+                        );
+
+                    }
+                );
+
+            }
+
+
+            // ---------------------------------------------
+            // TOP PROFILE
+            // ---------------------------------------------
+
+            const topProfile =
+                document.getElementById(
+                    "topProfile"
+                );
+
+
+            if (topProfile) {
+
+                topProfile.addEventListener(
+                    "click",
+                    function () {
+
+                        window.location.href =
+                            "../profile/profile.html";
+
+                    }
+                );
+
+            }
+
+        }
 
     }
-
-});
+);

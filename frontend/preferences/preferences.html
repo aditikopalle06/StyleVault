@@ -1,571 +1,252 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>StyleVault - Preferences</title>
 
-    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400"
         rel="stylesheet"
     >
-
+    <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="preferences.css">
-
 </head>
-
 
 <body>
 
-
     <!-- SIDEBAR -->
-
-    <aside class="sidebar">
+    <aside class="sidebar" id="mobileSidebar">
 
         <div class="logo-section">
-
-            <span class="logo-text">
-                StyleVault
-            </span>
-
+            <span class="logo-text">StyleVault</span>
         </div>
-
 
         <nav class="navigation">
 
             <a href="../dashboard/dashboard.html" class="nav-link">
-
-                <span class="material-symbols-outlined">
-                    dashboard
-                </span>
-
+                <span class="material-symbols-outlined">dashboard</span>
                 Dashboard
-
             </a>
 
-
-            <a href="#" class="nav-link">
-
-                <span class="material-symbols-outlined">
-                    checkroom
-                </span>
-
+            <a href="../wardrobe/wardrobe.html" class="nav-link">
+                <span class="material-symbols-outlined">checkroom</span>
                 Wardrobe
-
             </a>
 
-
-            <a href="#" class="nav-link">
-
-                <span class="material-symbols-outlined">
-                    styler
-                </span>
-
+            <a href="../outfits/outfits.html" class="nav-link">
+                <span class="material-symbols-outlined">styler</span>
                 Outfits
-
             </a>
 
-
-            <a href="#" class="nav-link">
-
-                <span class="material-symbols-outlined">
-                    calendar_today
-                </span>
-
+            <a href="../calendar/calendar.html" class="nav-link">
+                <span class="material-symbols-outlined">calendar_today</span>
                 Calendar
-
             </a>
 
-
-            <a href="#" class="nav-link">
-
-                <span class="material-symbols-outlined">
-                    history
-                </span>
-
+            <a href="../wear_history/wear_history.html" class="nav-link">
+                <span class="material-symbols-outlined">history</span>
                 Wear History
-
             </a>
 
-
-            <a href="#" class="nav-link">
-
-                <span class="material-symbols-outlined">
-                    insights
-                </span>
-
+            <a href="../analytics/analytics.html" class="nav-link">
+                <span class="material-symbols-outlined">insights</span>
                 Analytics
-
             </a>
 
-
-            <a href="#" class="nav-link ai-link">
-
-                <span class="material-symbols-outlined">
-                    auto_awesome
-                </span>
-
+            <a href="../ai_assistant/ai_assistant.html" class="nav-link ai-link" id="aiAssistantLink">
+                <span class="material-symbols-outlined">auto_awesome</span>
                 AI Assistant
-
             </a>
 
         </nav>
 
-
         <div class="sidebar-bottom">
-
             <a href="preferences.html" class="nav-link active">
-
-                <span class="material-symbols-outlined">
-                    settings
-                </span>
-
+                <span class="material-symbols-outlined">settings</span>
                 Preferences
-
             </a>
-
         </div>
 
     </aside>
-
-
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <!-- MAIN AREA -->
-
     <div class="main-area">
 
-
         <!-- TOP BAR -->
+        
+<header class="top-bar">
 
-        <header class="top-bar">
+    <!-- Left: Hamburger -->
+    <div class="topbar-left">
+        <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation menu"
+            aria-controls="mobileSidebar"
+            aria-expanded="false">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
 
-            <div></div>
+    <!-- Right: Search, notifications and profile -->
+    <div class="profile-area">
 
+        <button type="button" class="top-icon" aria-label="Search">
+            <span class="material-symbols-outlined">search</span>
+        </button>
 
-            <div class="profile-area" id="preferencesProfile">
+        <button type="button" class="top-icon" aria-label="Notifications">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
 
-                <button class="top-icon">
+        <div class="profile-divider"></div>
 
-                    <span class="material-symbols-outlined">
-                        search
-                    </span>
-
-                </button>
-
-
-                <button class="top-icon">
-
-                    <span class="material-symbols-outlined">
-                        notifications
-                    </span>
-
-                </button>
-
-
-                <div class="profile-divider"></div>
-
-
-                <div class="profile-details">
-
-                    <p id="displayName">
-                        User
-                    </p>
-
-                    <span>
-                        StyleVault
-                    </span>
-
-                </div>
-
-
-                <div class="profile-circle">
-
-                    <span class="material-symbols-outlined">
-                        person
-                    </span>
-
-                </div>
-
+        <a href="../profile/profile.html" class="profile-link">
+            <div class="profile-details">
+                <p id="displayName">User</p>
+                <span>StyleVault</span>
             </div>
 
-        </header>
+            <div class="profile-circle">
+                <span class="material-symbols-outlined">person</span>
+            </div>
+        </a>
 
+    </div>
+
+</header>
 
 
         <!-- PREFERENCES CONTENT -->
-
         <main class="preferences-page">
-
 
             <div class="preferences-content">
 
-
                 <!-- PAGE HEADER -->
-
                 <section class="page-header">
+                    <p class="section-label">PERSONALIZATION</p>
 
-                    <p class="section-label">
-                        PERSONALIZATION
-                    </p>
-
-
-                    <h1>
-                        Your Style Profile
-                    </h1>
-
+                    <h1>Your Style Profile</h1>
 
                     <p>
                         Fine-tune your preferences to help
                         personalize your StyleVault experience.
                     </p>
-
                 </section>
 
-
-
                 <!-- PREFERENCES FORM -->
-
-                <form
-                    id="preferencesForm"
-                    class="preferences-form"
-                >
-
+                <form id="preferencesForm" class="preferences-form">
 
                     <!-- PREFERRED STYLES -->
-
                     <section class="preference-section">
 
                         <div class="section-heading">
-
-                            <h2>
-                                Preferred Styles
-                            </h2>
-
-                            <p>
-                                Select the styles you enjoy wearing.
-                            </p>
-
+                            <h2>Preferred Styles</h2>
+                            <p>Select the styles you enjoy wearing.</p>
                         </div>
 
+                        <div class="option-group" data-group="preferred_styles">
 
-                        <div
-                            class="option-group"
-                            data-group="preferred_styles"
-                        >
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Minimalist"
-                            >
-                                Minimalist
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Vintage"
-                            >
-                                Vintage
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Streetwear"
-                            >
-                                Streetwear
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Bohemian"
-                            >
-                                Bohemian
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Classic"
-                            >
-                                Classic
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Sporty"
-                            >
-                                Sporty
-                            </button>
+                            <button type="button" class="option" data-value="Minimalist">Minimalist</button>
+                            <button type="button" class="option" data-value="Vintage">Vintage</button>
+                            <button type="button" class="option" data-value="Streetwear">Streetwear</button>
+                            <button type="button" class="option" data-value="Bohemian">Bohemian</button>
+                            <button type="button" class="option" data-value="Classic">Classic</button>
+                            <button type="button" class="option" data-value="Sporty">Sporty</button>
 
                         </div>
 
                     </section>
-
-
 
                     <!-- COLOR PALETTE -->
-
                     <section class="preference-section">
 
                         <div class="section-heading">
-
-                            <h2>
-                                Color Palette
-                            </h2>
-
-                            <p>
-                                Choose the colors you prefer.
-                            </p>
-
+                            <h2>Color Palette</h2>
+                            <p>Choose the colors you prefer.</p>
                         </div>
 
+                        <div class="option-group" data-group="preferred_colours">
 
-                        <div
-                            class="option-group"
-                            data-group="preferred_colours"
-                        >
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Neutrals"
-                            >
-                                Neutrals
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Earth Tones"
-                            >
-                                Earth Tones
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Pastels"
-                            >
-                                Pastels
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Bold Colors"
-                            >
-                                Bold Colors
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Monochrome"
-                            >
-                                Monochrome
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Jewel Tones"
-                            >
-                                Jewel Tones
-                            </button>
+                            <button type="button" class="option" data-value="Neutrals">Neutrals</button>
+                            <button type="button" class="option" data-value="Earth Tones">Earth Tones</button>
+                            <button type="button" class="option" data-value="Pastels">Pastels</button>
+                            <button type="button" class="option" data-value="Bold Colors">Bold Colors</button>
+                            <button type="button" class="option" data-value="Monochrome">Monochrome</button>
+                            <button type="button" class="option" data-value="Jewel Tones">Jewel Tones</button>
 
                         </div>
 
                     </section>
-
-
 
                     <!-- OCCASIONS -->
-
                     <section class="preference-section">
 
                         <div class="section-heading">
-
-                            <h2>
-                                Frequent Occasions
-                            </h2>
-
-                            <p>
-                                Select the occasions you dress for most often.
-                            </p>
-
+                            <h2>Frequent Occasions</h2>
+                            <p>Select the occasions you dress for most often.</p>
                         </div>
 
+                        <div class="option-group" data-group="preferred_occasions">
 
-                        <div
-                            class="option-group"
-                            data-group="preferred_occasions"
-                        >
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Everyday Casual"
-                            >
-                                Everyday Casual
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Work"
-                            >
-                                Work
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="College"
-                            >
-                                College
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Night Out"
-                            >
-                                Night Out
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Formal Events"
-                            >
-                                Formal Events
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Travel"
-                            >
-                                Travel
-                            </button>
+                            <button type="button" class="option" data-value="Everyday Casual">Everyday Casual</button>
+                            <button type="button" class="option" data-value="Work">Work</button>
+                            <button type="button" class="option" data-value="College">College</button>
+                            <button type="button" class="option" data-value="Night Out">Night Out</button>
+                            <button type="button" class="option" data-value="Formal Events">Formal Events</button>
+                            <button type="button" class="option" data-value="Travel">Travel</button>
 
                         </div>
 
                     </section>
-
-
 
                     <!-- SEASONS -->
-
                     <section class="preference-section">
 
                         <div class="section-heading">
-
-                            <h2>
-                                Focus Seasons
-                            </h2>
-
-                            <p>
-                                Select the seasons you usually dress for.
-                            </p>
-
+                            <h2>Focus Seasons</h2>
+                            <p>Select the seasons you usually dress for.</p>
                         </div>
 
+                        <div class="option-group" data-group="preferred_seasons">
 
-                        <div
-                            class="option-group"
-                            data-group="preferred_seasons"
-                        >
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Spring"
-                            >
-                                Spring
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Summer"
-                            >
-                                Summer
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Autumn"
-                            >
-                                Autumn
-                            </button>
-
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Winter"
-                            >
-                                Winter
-                            </button>
+                            <button type="button" class="option" data-value="Spring">Spring</button>
+                            <button type="button" class="option" data-value="Summer">Summer</button>
+                            <button type="button" class="option" data-value="Autumn">Autumn</button>
+                            <button type="button" class="option" data-value="Winter">Winter</button>
 
                         </div>
 
                     </section>
 
-
-
                     <!-- FIT -->
-
                     <section class="preference-section">
 
                         <div class="section-heading">
-
-                            <h2>
-                                Fit Preference
-                            </h2>
-
-                            <p>
-                                Choose your preferred clothing fit.
-                            </p>
-
+                            <h2>Fit Preference</h2>
+                            <p>Choose your preferred clothing fit.</p>
                         </div>
-
 
                         <div
                             class="option-group single-select"
                             data-group="preferred_fit"
                         >
 
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Tailored / Slim"
-                            >
+                            <button type="button" class="option" data-value="Tailored / Slim">
                                 Tailored / Slim
                             </button>
 
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Regular"
-                            >
+                            <button type="button" class="option" data-value="Regular">
                                 Regular
                             </button>
 
-                            <button
-                                type="button"
-                                class="option"
-                                data-value="Relaxed / Oversized"
-                            >
+                            <button type="button" class="option" data-value="Relaxed / Oversized">
                                 Relaxed / Oversized
                             </button>
 
@@ -573,24 +254,13 @@
 
                     </section>
 
-
-
                     <!-- ADDITIONAL PREFERENCES -->
-
                     <section class="preference-section">
 
                         <div class="section-heading">
-
-                            <h2>
-                                Additional Preferences
-                            </h2>
-
-                            <p>
-                                Tell us anything else about your style.
-                            </p>
-
+                            <h2>Additional Preferences</h2>
+                            <p>Tell us anything else about your style.</p>
                         </div>
-
 
                         <textarea
                             id="additionalPreferences"
@@ -600,10 +270,7 @@
 
                     </section>
 
-
-
                     <!-- SAVE -->
-
                     <div class="save-section">
 
                         <button
@@ -614,30 +281,26 @@
                             Save Preferences
                         </button>
 
-
-                        <p
-                            class="save-message"
-                            id="saveMessage"
-                        ></p>
+                        <p class="save-message" id="saveMessage"></p>
 
                     </div>
 
-
                 </form>
-
 
             </div>
 
-
         </main>
-
 
     </div>
 
-
-
     <script src="preferences.js"></script>
+    <script src="../common.js"></script>
+
+    <script>
+        const aiAssistantLink = document.getElementById("aiAssistantLink");
+
+        
+    </script>
 
 </body>
-
 </html>

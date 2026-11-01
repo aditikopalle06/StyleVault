@@ -1,0 +1,665 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StyleVault - Clothing Details</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght@400&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="clothing_details.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo-section">
+
+            <span class="logo-text">
+                StyleVault
+            </span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a
+                href="../dashboard/dashboard.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="../wardrobe/wardrobe.html"
+                class="nav-link active"
+            >
+
+                <span class="material-symbols-outlined">
+                    checkroom
+                </span>
+
+                Wardrobe
+
+            </a>
+
+
+            <a
+                href="../outfits/outfits.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    styler
+                </span>
+
+                Outfits
+
+            </a>
+
+
+            <a
+                href="../calendar/calendar.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
+                Calendar
+
+            </a>
+
+
+            <a
+                href="../wear_history/wear_history.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+
+                Wear History
+
+            </a>
+
+
+            <a
+                href="../analytics/analytics.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    insights
+                </span>
+
+                Analytics
+
+            </a>
+
+
+            <a
+                href="../ai_assistant/ai_assistant.html"
+                class="nav-link ai-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    auto_awesome
+                </span>
+
+                AI Assistant
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="../preferences/preferences.html"
+                class="nav-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+
+                Preferences
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN AREA -->
+
+    <div class="main-area">
+
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div></div>
+
+
+            <div class="profile-area">
+
+
+                <button class="top-icon">
+
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+
+                </button>
+
+
+                <button class="top-icon">
+
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                </button>
+
+
+                <div class="profile-divider"></div>
+
+
+                <div
+                    class="profile-details"
+                    id="profileDetails"
+                >
+
+                    <p id="displayName">
+                        User
+                    </p>
+
+                    <span>
+                        StyleVault
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="profile-circle"
+                    id="profileButton"
+                >
+
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="details-page">
+
+
+            <!-- LOADING -->
+
+            <div
+                class="loading-state"
+                id="loadingState"
+            >
+
+                Loading clothing details...
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                class="error-state"
+                id="errorState"
+            >
+
+                <span class="material-symbols-outlined">
+                    error
+                </span>
+
+                <p>
+                    Unable to load this clothing item.
+                </p>
+
+                <button
+                    class="secondary-button"
+                    id="backFromErrorButton"
+                >
+
+                    Go Back
+
+                </button>
+
+            </div>
+
+
+            <!-- DETAILS CONTENT -->
+
+            <div
+                class="details-container"
+                id="detailsContainer"
+            >
+
+
+                <!-- LEFT SIDE -->
+
+                <div class="image-section">
+
+
+                    <!-- MOBILE ACTIONS -->
+
+                    <div class="mobile-actions">
+
+                        <button
+                            class="round-button"
+                            id="backButtonMobile"
+                        >
+
+                            <span class="material-symbols-outlined">
+                                arrow_back
+                            </span>
+
+                        </button>
+
+
+                        <div class="mobile-action-group">
+
+                            <button
+                                class="round-button"
+                                id="editButtonMobile"
+                            >
+
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- IMAGE CARD -->
+
+                    <div class="clothing-image-card">
+
+
+                        <!-- DESKTOP ACTIONS -->
+
+                        <div class="image-actions">
+
+                            <button
+                                class="round-button"
+                                id="editButton"
+                            >
+
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                class="round-button delete-button"
+                                id="deleteButton"
+                            >
+
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                        <img
+                            id="clothingImage"
+                            src=""
+                            alt="Clothing item"
+                        >
+
+
+                        <div class="colour-badge">
+
+                            <span
+                                class="colour-dot"
+                                id="colourDot"
+                            ></span>
+
+                            <span id="imageColour">
+                                Colour
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="details-section">
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="item-category">
+
+                        <span
+                            class="material-symbols-outlined"
+                        >
+                            auto_awesome
+                        </span>
+
+                        <span id="itemCategory">
+                            CATEGORY
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- NAME -->
+
+                    <h1 id="itemName">
+                        Clothing Item
+                    </h1>
+
+
+
+                    <!-- TAGS -->
+
+                    <div
+                        class="item-tags"
+                        id="itemTags"
+                    >
+
+                        <!-- Added through JavaScript -->
+
+                    </div>
+
+
+
+                    <!-- ITEM INFORMATION -->
+
+                    <div class="item-information">
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Category
+                            </span>
+
+                            <span
+                                class="info-value"
+                                id="infoCategory"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Colour
+                            </span>
+
+                            <span
+                                class="info-value"
+                                id="infoColour"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Season
+                            </span>
+
+                            <span
+                                class="info-value"
+                                id="infoSeason"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Price
+                            </span>
+
+                            <span
+                                class="info-value"
+                                id="infoPrice"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Size / Fit
+                            </span>
+
+                            <span
+                                class="info-value"
+                                id="infoSize"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Occasion
+                            </span>
+
+                            <span
+                                class="info-value"
+                                id="infoOccasion"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INVESTMENT METRICS -->
+
+                    <div class="metrics-card">
+
+                        <div class="metrics-text">
+
+                            <h3>
+                                Wardrobe Metrics
+                            </h3>
+
+                        </div>
+
+
+                        <div class="metrics-values">
+
+
+                            <div class="metric">
+
+                                <span class="metric-number">
+                                    0
+                                </span>
+
+                                <span class="metric-label">
+                                    Wears
+                                </span>
+
+                            </div>
+
+
+                            <div class="metric-divider"></div>
+
+
+                            <div class="metric">
+
+                                <span
+                                    class="metric-number"
+                                    id="costPerWear"
+                                >
+                                    —
+                                </span>
+
+                                <span class="metric-label">
+                                    Per Wear
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EXTRA INFORMATION -->
+
+                    <div class="notes-section">
+
+                        <span class="notes-label">
+                            Notes / Extra Info
+                        </span>
+
+
+                        <div class="notes-box">
+
+                            <p id="extraInfo">
+                                No additional information added.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ACTION BUTTONS -->
+
+                    <div class="bottom-actions">
+
+
+                        <button
+                            class="primary-button"
+                            id="addToOutfitButton"
+                        >
+
+                            <span class="material-symbols-outlined">
+                                add
+                            </span>
+
+                            Add to Outfit
+
+                        </button>
+
+
+                        <button
+                            class="secondary-button"
+                            id="logWearButton"
+                        >
+
+                            <span class="material-symbols-outlined">
+                                history
+                            </span>
+
+                            Log Wear
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <script src="clothing_details.js"></script>
+
+</body>
+
+</html>
+```
